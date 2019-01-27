@@ -5,105 +5,130 @@
     <title>HTML Academy: Нёрдс</title>
   </head>
   <body>
-    <header>
-      <a href="/#"><img src="/#" alt="logo"></a>
-      <nav>
-        <ul>
-          <li><a href="/#">Студия</a></li>
-          <li><a href="/#">Клиенты</a></li>
-          <li><a href="/#">Магазин</a></li>
-          <li><a href="/#">Контакты</a></li>
-        </ul>
-      </nav>
-      <a href="/#">Корзина</a>
-    </header>
-    <main>
-      <section class="main--ad">
-        <div>
-          <p>Долго, дорого, скрупулезно.</p>
-          <p>Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
-          <a href="/#">Узнать больше</a>
-        </div>
-      </section>
-      <section class="main--content">
-        <section class="content-block">
-          <img src="/#" alt="Ilustrative picture">
-          <h2>Веб-сайты</h2>
-          <p>Мир никогда не будет прежним после того, как увидит ваш сайт!</p>
-          <a href="/#">Заказать</a>
-        </section>
-        <section class="content-block">
-            <img src="/#" alt="Ilustrative picture">
-            <h2>Приложения</h2>
-            <p>Покорите топ-10 приложений в AppStore и Google Play</p>
-            <a href="/#">Заказать</a>
-        </section>
-        <section class="content-block">
-            <img src="/#" alt="Ilustrative picture">
-            <h2>Презентации</h2>
-            <p>Вы даже не подозреваете, насколько вы изумительны!</p>
-            <a href="/#">Заказать</a>
-        </section>
-      </section>
-      <section class="main--info">
-        <section class="info-studio">
-          <p>Мы – маленькая, но гордая дизайн-студия из Краснодара.</p>
-          <p>Используем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не покладая рук, как роботы.</p>
-          <p>Выполняем заказы на разработку:</p>
+    <section class="page">
+      <header class="header header--main">
+        <span class="logo"><img src="img/logo.jpg" alt="logo" width="160" height="65"></span>
+        <nav class="navigation">
           <ul>
-            <li>Веб-сайтов любой сложности</li>
-            <li>Мобильных приложений для iOS и Android</li>
-            <li>Слайдшоу и видео для корпоративных презентаций</li>
+            <li><a href="#">Студия</a></li>
+            <li><a href="#">Клиенты</a></li>
+            <li><a href="#">Магазин</a></li>
+            <li><a href="#">Контакты</a></li>
           </ul>
-        </section>
-        <img src="/#" alt="logo">
-        <table>
-          <tr>
-            <th>С 2004 года любим точность во всем:</th>
-          </tr>
-          <tr>
-            <td>146%</td>
-            <td>100%</td>
-            <td>50%</td>
-          </tr>
-          <tr>
-            <td>Уровень самоотдачи</td>
-            <td>Соблюдение сроков</td>
-            <td>Минимальная предоплата</td>
-          </tr>
-        </table>
-      </section>
-      <section class="main--partners">
-        <ul>
-          <li><a href="/#"><img src="/#" alt="partner logo">HTMLacademy</a></li>
-          <li><a href="/#"><img src="/#" alt="partner logo">Borodinsky</a></li>
-          <li><a href="/#"><img src="/#" alt="partner logo">Pink</a></li>
-          <li><a href="/#"><img src="/#" alt="partner logo">Mishka</a></li>
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <section class="footer--contacts">
-        <section class="contacts">
-          <p>Nerds design studio</p>
-          <p>191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
-          <p>тел. +7(812)275-75-75</p>
-          <a href="/#">Напишите нам</a>
-        </section>
-        <a href="/#"><img src="/#" class="map-pin" alt="Map pin with logo">Nerds</a>
-      </section>
-      <section class="footer--social-media">
-        <div>
-            <p>Давайте дружить, это выгодно!</p>
-            <p>Скидка 10% для друзей из социальных сетей.</p>
+        </nav>
+        <a href="#" class="cart">Корзина</a>
+      </header>
+      <main class="content">
+        <section class="slider">
+          <div class="slider__element slider__element--active">
+            <p class="slider__title">Долго, дорого, скрупулезно.</p>
+            <p>Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
+            <a href="#" class="btn slider__link">Узнать больше</a>
+            <img src="img/slide-1.png" alt="promo picture with cell phones" width="698" height="413">
           </div>
-          <ul class="social-media">
-            <li class="social-media-icon"><a href="/#">VK</a></li>
-            <li class="social-media-icon"><a href="/#">Facebook</a></li>
-            <li class="social-media-icon"><a href="/#">Instagram</a></li>
+          <div class="slider__element">
+            <p class="slider__title">Любим математику как никто другой</p>
+            <p>Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
+            <a href="#" class="btn slider__link">Узнать больше</a>
+            <img src="img/slide-2.png" alt="promo picture with two monitors" width="698" height="413">
+          </div>
+          <div class="slider__element">
+            <p class="slider__title">Только ночь, только хардкор</p>
+            <p>Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
+            <a href="#" class="btn slider__link">Узнать больше</a>
+            <img src="img/slide-3.png" alt="promo picture with tablets" width="698" height="413">
+          </div>
+        </section>
+        <section class="grid">
+          <div class="grid__item">
+              <section class="media-item">
+                  <img class="media-item__image" src="img/illustration-1.jpg" alt="" width="300" height="146">
+                  <h3 class="media-item__title">Веб-сайты</h3>
+                  <p class="media-item__text">Мир никогда не будет прежним после того, как увидит ваш сайт!</p>
+                  <a href="#" class="btn media-item__link">Заказать</a>
+              </section>
+          </div>
+          <div class="grid__item">
+              <section class="media-item">
+                  <img class="media-item__image" src="img/illustration-2.jpg" alt="" width="300" height="146">
+                  <h3 class="media-item__title">Приложения</h3>
+                  <p class="media-item__text">Покорите топ-10 приложений в AppStore и Google Play</p>
+                  <a href="#" class="btn media-item__link">Заказать</a>
+              </section>
+          </div>
+          <div class="grid__item">
+              <section class="media-item">
+                  <img class="media-item__image" src="img/illustration-3.jpg" alt="" width="300" height="146">
+                  <h3 class="media-item__title">Презентации</h3>
+                  <p class="media-item__text">Вы даже не подозреваете, насколько вы изумительны!</p>
+                  <a href="#" class="btn media-item__link">Заказать</a>
+              </section>
+          </div>
+        </section>
+        <section class="company">
+          <div class="company__description">
+            <p class="company__text company__text--big">Мы – маленькая, но гордая дизайн-студия из Краснодара.</p>
+            <p class="company__text">Используем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не покладая рук, как роботы.</p>
+            <p class="company-text company-text--description">Выполняем заказы на разработку:</p>
+            <ul class="company__list">
+              <li>Веб-сайтов любой сложности</li>
+              <li>Мобильных приложений для iOS и Android</li>
+              <li>Слайдшоу и видео для корпоративных презентаций</li>
+            </ul>
+          </div>
+          <div class="company__graph">
+            <img src="img/nerds-illustration.png" alt="illustrative company logo" width="360" height="208">
+            <p class="company-text company-text--description">С 2004 года любим точность во всем:</p>
+            <table class="company__table">
+              <tr>
+                <td>Уровень самоотдачи</td>
+                <td>Соблюдение сроков</td>
+                <td>Минимальная предоплата</td>
+              </tr>
+              <tr>
+                <td>146%</td>
+                <td>100%</td>
+                <td>50%</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+        <section class="partners">
+          <ul class="partners__list">
+            <li><a href="#"><img src="img/partnerlogo-1.png" alt="partner logo">HTML Academy</a></li>
+            <li><a href="#"><img src="img/partnerlogo-2.png" alt="partner logo">Borodinski</a></li>
+            <li><a href="#"><img src="img/partnerlogo-3.png" alt="partner logo">Pink</a></li>
+            <li><a href="#"><img src="img/partnerlogo-4.png" alt="partner logo">Mishka</a></li>
           </ul>
-      </section>
-    </footer>
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>
+        </section>
+      </main>
+      <footer class="footer footer--main">
+        <div class="contacts">
+          <div class="map">
+            <a href="#" class="map__link">
+              <img class="map__image" src="img/map.png" alt="map" width="1440" height="416">
+            </a>
+            <img class="map__pin" src="img/map-pin.png" alt="Map pin with logo">
+          </div>
+          <div class="address">
+            <p class="address__title">Nerds design studio</p>
+            <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
+            <p class="address__phone">тел. +7(812)275-75-75</p>
+            <a href="#" class="btn address__link">Напишите нам</a>
+          </div>
+        </div>
+        <div class="social">
+          <ul class="social__list">
+            <li><a href="#">VK</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+          <div class="social__description">
+            <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
+            <p class="social__text">Скидка 10% для друзей из социальных сетей.</p>
+          </div>
+        </div>
+      </footer>
+    </section>
   </body>
 </html>

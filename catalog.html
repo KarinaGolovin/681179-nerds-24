@@ -5,27 +5,21 @@
     <title>HTML Academy: Нёрдс</title>
   </head>
   <body>
-    <header>
-      <a href="/#"><img src="/#" alt="logo"></a>
-      <nav>
-        <ul>
-          <li><a href="/#">Студия</a></li>
-          <li><a href="/#">Клиенты</a></li>
-          <li><a href="/#">Магазин</a></li>
-          <li><a href="/#">Контакты</a></li>
-        </ul>
-      </nav>
-      <a href="/#">Корзина</a>
-      <h1>Магазин готовых шаблонов</h1>
-    </header>
-    <main>
-      <form action="/#" class="form-catalog">
-        <section class="catalog--content-left">
-          <div>
-            <p>Стоимость:</p>
-            <input type="text" value="0">
-            <input type="text" value="15000">
-          </div>
+    <section class="page">
+      <header class="header header--main">
+        <a class="logo logo__link"><img src="img/logo.jpg" alt="logo" width="160" height="65"></a>
+        <nav class="navigation">
+          <ul>
+            <li><a href="#">Студия</a></li>
+            <li><a href="#">Клиенты</a></li>
+            <li><a href="#">Магазин</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cart">Корзина</a>
+      </header>
+      <main class="content">
+        <section class="content__left">
           <div>
             <p>Сетка:</p>
             <ul>
@@ -44,52 +38,72 @@
               <li><input type="checkbox"><span>Корзина</span></li>
             </ul>
           </div>
-          <button>Показать</button>
+          <button class="form__btn">Показать</button>
         </section>
-        <section class="catalog--content-right">
-          <div>
-            <p>Сортировать:</p>
+        <section class="content__right">
+          <div class="grid">
+            <a class="grid__item" href="#">
+              <div class="preview__header"></div>
+              <img class="preview__mage" src="img/img-sedona.png" alt="Sedona site template" width="360" height="576">
+            </a>
+            <a class="grid__item" href="#">
+              <div class="preview__header"></div>
+              <img class="preview__mage" src="img/img-pink.png" alt="Pink site template" width="360" height="576">
+            </a>
+            <a class="grid__item" href="#">
+              <div class="preview__header"></div>
+              <img class="preview__mage" src="img/img-barbershop.png" alt="Barbershop site template" width="360" height="576">
+            </a>
+            <a class="grid__item" href="#">
+              <div class="preview__header"></div>
+              <img class="preview__mage" src="img/img-mishka.png" alt="Mishka site template" width="360" height="576">
+            </a>
+            <a class="grid__item" href="#">
+              <div class="preview__header"></div>
+              <img class="preview__mage" src="img/img-aplus.png" alt="Aplus site template" width="360" height="576">
+            </a>
+            <a class="grid__item" href="#">
+              <div class="preview__header"></div>
+              <img class="preview__mage" src="img/img-kvast.png" alt="Kvast site template" width="360" height="576">
+            </a>
           </div>
-          <div>
-            <a href="/#"><img src="/#" alt="Site template"></a>
-            <a href="/#"><img src="/#" alt="Site template"></a>
-            <a href="/#"><img src="/#" alt="Site template"></a>
-            <a href="/#"><img src="/#" alt="Site template"></a>
-            <a href="/#"><img src="/#" alt="Site template"></a>
-            <a href="/#"><img src="/#" alt="Site template"></a>
-          </div>
-          <div>
-            <ol>
-              <li><a href="/#">1</a></li>
-              <li><a href="/#">2</a></li>
-              <li><a href="/#">3</a></li>
-              <li><a href="/#">Следующая</a></li>
+          <div class="paginator">
+            <ol class="paginator__list">
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">Следующая</a></li>
             </ol>
           </div>
         </section>
-      </form>
-    </main>
-    <footer>
-      <section class="footer--contacts">
-          <section class="contacts">
-            <p>Nerds design studio</p>
-            <p>191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
-            <p>тел. +7(812)275-75-75</p>
-            <a href="/#">Напишите нам</a>
-          </section>
-          <a href="/#"><img src="/#" class="map-pin" alt="Map pin with logo">Nerds</a>
-        </section>
-        <section class="footer--social-media">
-          <div>
-              <p>Давайте дружить, это выгодно!</p>
-              <p>Скидка 10% для друзей из социальных сетей.</p>
-            </div>
-            <ul class="social-media">
-              <li class="social-media-icon"><a href="/#">VK</a></li>
-              <li class="social-media-icon"><a href="/#">Facebook</a></li>
-              <li class="social-media-icon"><a href="/#">Instagram</a></li>
-            </ul>
-        </section>
-    </footer>
+      </main>
+      <footer class="footer footer--main">
+        <div class="contacts">
+          <div class="map">
+            <a href="#" class="map__link">
+              <img class="map__image" src="img/map.png" alt="map" width="1440" height="416">
+            </a>
+            <img class="map__pin" src="img/map-pin.png" alt="Map pin with logo">
+          </div>
+          <div class="address">
+            <p class="address__title">Nerds design studio</p>
+            <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
+            <p class="address__phone">тел. +7(812)275-75-75</p>
+            <a href="#" class="btn address__link">Напишите нам</a>
+          </div>
+        </div>
+        <div class="social">
+          <ul class="social__list">
+            <li><a href="#">VK</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+          <div class="social__description">
+            <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
+            <p class="social__text">Скидка 10% для друзей из социальных сетей.</p>
+          </div>
+        </div>
+      </footer>
+    </section>
   </body>
-  </html>
+</html>
