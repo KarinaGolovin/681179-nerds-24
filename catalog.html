@@ -5,117 +5,146 @@
     <title>HTML Academy: Нёрдс</title>
   </head>
   <body>
-    <section class="page">
-      <header class="header header--main">
-        <a class="logo logo__link"><img src="img/logo.jpg" alt="logo" width="160" height="65"></a>
-        <nav class="navigation">
-          <ul>
-            <li><a href="#">Студия</a></li>
-            <li><a href="#">Клиенты</a></li>
-            <li><a href="#">Магазин</a></li>
-            <li><a href="#">Контакты</a></li>
+    <header class="header">
+      <a class="logo"><img src="img/logo.jpg" alt="Логотип компании Нёрдс" width="160" height="65"></a>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#">Студия</a></li>
+          <li><a href="#">Клиенты</a></li>
+          <li><a href="#">Магазин</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="cart">Корзина</a>
+    </header>
+    <main class="content">
+      <div class="page-title">
+        <h2>Магазин готовых шаблонов</h2>
+      </div>
+      <section class="content__left">
+        <form class="form" action="#" method="GET">
+            <div class="form__radio">
+              <label for="form-grid">Сетка:</p>
+              <ul>
+                <li><input type="radio" name="grid" id="form-grid" checked><span></span></li>
+                <li><input type="radio" name="grid" id="form-grid"><span></span></li>
+                <li><input type="radio" name="grid" id="form-grid"><span></span></li>
+              </ul>
+            </div>
+            <div class="form__checkbox">
+              <label for="form-features">Особенности:</label>
+              <ul>
+                <li><input type="checkbox" name="features" id="form-features" checked><span>Слайдер</span></li>
+                <li><input type="checkbox" name="features" id="form-features"><span>Блок преимуществ</span></li>
+                <li><input type="checkbox" name="features" id="form-features" checked><span>Новости</span></li>
+                <li><input type="checkbox" name="features" id="form-features"><span>Галерея</span></li>
+                <li><input type="checkbox" name="features" id="form-features"><span>Корзина</span></li>
+              </ul>
+            </div>
+            <button class="form__btn" type="submit">Показать</button>
+        </form>
+      </section>
+      <section class="content__right">
+        <div class="grid">
+          <ul class="grid__list">
+            <li>
+              <div class="preview preview__active">
+                <img class="preview__image" src="img/img-sedona.png" alt="Образец сайта Sedona" width="360" height="576">
+                <div class="preview__description">
+                  <a href="#"><h3>Sedona</h3></a>
+                  <p>Информационный сайт  для туристов</p>
+                  <a class="btn" href="#">9 900 руб.</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="preview">
+                <img class="preview__image" src="img/img-pink.png" alt="Образец сайта Pink App" width="360" height="576">
+                <div class="preview__description" hidden>
+                  <a href="#"><h3>Pink App</h3></a>
+                  <p>Продуктовый лендинг приложения для iOS и Android</p>
+                  <a class="btn" href="#">9 900 руб.</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="preview">
+                <img class="preview__image" src="img/img-barbershop.png" alt="Образец сайта Barbershop" width="360" height="576">
+                <div class="preview__description" hidden>
+                  <a href="#"><h3>Barbershop</h3></a>
+                  <p>Сайт салона красоты. Для мужчин, да.</p>
+                  <a class="btn" href="#">9 900 руб.</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="preview">
+                <img class="preview__image" src="img/img-mishka.png" alt="Образец сайта MISHKA" width="360" height="576">
+                <div class="preview__description" hidden>
+                  <a href="#"><h3>MISHKA</h3></a>
+                  <p>Интернет-магазин  вязаных игрушек</p>
+                  <a class="btn" href="#">9 900 руб.</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="preview">
+                <img class="preview__image" src="img/img-aplus.png" alt="Образец сайта A Plus" width="360" height="576">
+                <div class="preview__description" hidden>
+                  <a href="#"><h3>A Plus</h3></a>
+                  <p>Лендинг курсов повышения квалификации</p>
+                  <a class="btn" href="#">9 900 руб.</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="preview">
+                <img class="preview__image" src="img/img-kvast.png" alt="Образец сайта КВАСТ" width="360" height="576">
+                <div class="preview__description" hidden>
+                  <a href="#"><h3>КВАСТ</h3></a>
+                  <p>Промо-сайт производителя крафтового кваса</p>
+                  <a class="btn" href="#">9 900 руб.</a>
+                </div>
+              </div>
+            </li>
           </ul>
-        </nav>
-        <a href="#" class="cart">Корзина</a>
-      </header>
-      <main class="content">
-        <section class="content__left">
-          <div>
-            <p>Сетка:</p>
-            <ul>
-              <li><input type="radio" name="grid" checked><span></span></li>
-              <li><input type="radio" name="grid"><span></span></li>
-              <li><input type="radio" name="grid"><span></span></li>
-            </ul>
-          </div>
-          <div>
-            <p>Особенности:</p>
-            <ul>
-              <li><input type="checkbox" name="features" checked><span>Слайдер</span></li>
-              <li><input type="checkbox" name="features"><span>Блок преимуществ</span></li>
-              <li><input type="checkbox" name="features" checked><span>Новости</span></li>
-              <li><input type="checkbox" name="features"><span>Галерея</span></li>
-              <li><input type="checkbox" name="features"><span>Корзина</span></li>
-            </ul>
-          </div>
-          <button class="form__btn">Показать</button>
-        </section>
-        <section class="content__right">
-          <div class="grid">
-            <a class="grid__item" href="#">
-              <div class="preview">
-                <header class="preview__header"></header>
-                <img class="preview__image" src="img/img-sedona.png" alt="Sedona site template" width="360" height="576">
-              </div>
-            </a>
-            <a class="grid__item" href="#">
-              <div class="preview">
-                <header class="preview__header"></header>
-                <img class="preview__image" src="img/img-pink.png" alt="Pink site template" width="360" height="576">
-              </div>
-            </a>
-            <a class="grid__item" href="#">
-              <div class="preview">
-                <header class="preview__header"></header>
-                <img class="preview__image" src="img/img-barbershop.png" alt="Barbershop site template" width="360" height="576">
-              </div>
-            </a>
-            <a lass="grid__item" href="#">
-              <div class="preview">
-                <header class="preview__header"></header>
-                <img class="preview__image" src="img/img-mishka.png" alt="Mishka site template" width="360" height="576">
-              </div>
-            </a>
-            <a class="grid__item" href="#">
-              <div class="preview">
-                <header class="preview__header"></header>
-                <img class="preview__image" src="img/img-aplus.png" alt="Aplus site template" width="360" height="576">
-              </div>
-            </a>
-            <a class="grid__item" href="#">
-              <div class="preview">
-                <header class="preview__header"></header>
-                <img class="preview__image" src="img/img-kvast.png" alt="Kvast site template" width="360" height="576">
-              </div>
-            </a>
-          </div>
-          <div class="paginator">
-            <ol class="paginator__list">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">Следующая</a></li>
-            </ol>
-          </div>
-        </section>
-      </main>
-      <footer class="footer footer--main">
-        <div class="contacts">
-          <div class="map">
-            <a href="#" class="map__link">
-              <img class="map__image" src="img/map.png" alt="map" width="1440" height="416">
-            </a>
-            <img class="map__pin" src="img/map-pin.png" alt="Map pin with logo">
-          </div>
-          <div class="address">
-            <p class="address__title">Nerds design studio</p>
-            <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
-            <p class="address__phone">тел. +7(812)275-75-75</p>
-            <a href="#" class="btn address__link">Напишите нам</a>
-          </div>
+
+          <a class="grid__item" href="#">
+
+          </a>
         </div>
-        <div class="social">
-          <ul class="social__list">
-            <li><a href="#">VK</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-          </ul>
-          <div class="social__description">
-            <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
-            <p class="social__text">Скидка 10% для друзей из социальных сетей.</p>
-          </div>
+        <div class="pagination">
+            <a class="pagination__active" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a  class="pagination__next" href="#">Следующая</a>
         </div>
-      </footer>
-    </section>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="contacts">
+        <div class="map">
+          <img class="map__image" src="img/map.png" alt="Карта" width="1440" height="416">
+          <div class="map__pin"></div>
+        </div>
+        <div class="address">
+          <p class="address__title">Nerds design studio</p>
+          <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
+          <p class="address__phone">тел. +7(812)275-75-75</p>
+          <a href="#" class="btn address__link">Напишите нам</a>
+        </div>
+      </div>
+      <div class="social">
+        <ul class="social__list">
+          <li><a href="#">VK</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+        <div class="social__description">
+          <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
+          <p class="social__text">Скидка 10% для друзей из социальных сетей.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
