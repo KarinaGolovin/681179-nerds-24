@@ -146,5 +146,26 @@
         </div>
       </div>
     </footer>
+    <div class="contact-form__container" hidden>
+      <form class="contact-form" action="" method="POST">
+        <p class="contact-form__title">Напишите нам</p>
+        <a class="contact-form__close" href="#">&times;</a>
+        <fieldset>
+          <label for="name-input">Ваше имя:</label>
+          <input name="name-input" placeholder="Имя Фамилия" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+          <label for="email-input">Ваш e-mail:</label>
+          <input name="email-input" placeholder="email@example.com" type="email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+          <label for="text-input">Текст письма:</label>
+          <textarea name="text-input" placeholder="В свободной форме" tabindex="3" required></textarea>
+        </fieldset>
+        <fieldset>
+          <button class="contact-form__btn" type="submit">ОТПРАВИТЬ</button>
+        </fieldset>
+      </form>
+    </div>
   </body>
 </html>
