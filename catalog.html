@@ -22,24 +22,24 @@
         <h1>Магазин готовых шаблонов</h1>
       </div>
       <section class="content__filter">
-        <h2 class="content__filter--title hidden">Фильтрация товаров</h2>
+        <h2 class="content__filter--title visuallyhidden">Фильтрация товаров</h2>
         <form class="form-filter" action="#" method="GET">
           <fieldset class="form-filter__item form-filter__range">
             <legend>Стоимость:</legend>
-            <label>от<input type="text" name="min-value" value="0"></label>
-            <label>до<input type="text" name="max-value" value="15000"></label>
+            <label>от<input type="number" name="min-value" min="0" max="10" value="0"></label>
+            <label>до<input type="number" name="max-value" min="0" max="15000" value="15000"></label>
           </fieldset>
           <fieldset class="form-filter__item form-filter__radio">
             <legend>Сетка:</legend>
             <ul class="grid-list">
               <li>
-                <label><input type="radio" name="grid" checked>Адаптивная</label>
+                <label><input type="radio" name="grid" value="Adaptive" checked><span>Адаптивная</span></label>
               </li>
               <li>
-                <label><input type="radio" name="grid">Фиксированная</label>
+                <label><input type="radio" name="grid" value="Fixed"><span>Фиксированная</span></label>
               </li>
               <li>
-                <label><input type="radio" name="grid">Резиновая</label>
+                <label><input type="radio" name="grid" value="Responsive"><span>Резиновая</span></label>
               </li>
             </ul>
           </fieldset>
@@ -47,19 +47,19 @@
             <legend>Особенности:</legend>
             <ul class="feature-list">
               <li>
-                <label><input type="checkbox" name="features" checked>Слайдер</label>
+                <label><input type="checkbox" name="features" value="Carousel" checked><span>Слайдер</span></label>
               </li>
               <li>
-                <label><input type="checkbox" name="features">Блок преимуществ</label>
+                <label><input type="checkbox" name="features" value="Features"><span>Блок преимуществ</span></label>
               </li>
               <li>
-                <label><input type="checkbox" name="features" checked>Новости</label>
+                <label><input type="checkbox" name="features" value="News" checked><span>Новости</span></label>
               </li>
               <li>
-                <label><input type="checkbox" name="features">Галерея</label>
+                <label><input type="checkbox" name="features" value="Gallery"><span>Галерея</span></label>
               </li>
               <li>
-                <label><input type="checkbox" name="features">Корзина</label>
+                <label><input type="checkbox" name="features" value="Cart"><span>Корзина</span></label>
               </li>
             </ul>
           </fieldset>
@@ -154,23 +154,20 @@
     </footer>
     <div class="contact-form__container">
       <p class="contact-form__title">Напишите нам</p>
-      <a class="contact-form__close" href="#">&times;</a>
+      <button class="btn contact-form__close" type="button">Закрыть</button>
       <form class="contact-form" action="#" method="POST">
         <fieldset>
-          <label for="name-input">Ваше имя:</label>
-          <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" tabindex="1" required autofocus>
+          <div>
+            <label for="name-input">Ваше имя:<input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required></label>
+          </div>
+          <div>
+            <label for="email-input">Ваш e-mail:<input name="email-input" id="email-input" placeholder="email@example.com" type="email" required></label>
+          </div>
+          <div>
+            <label for="text-input">Текст письма:<textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea></label>
+          </div>
         </fieldset>
-        <fieldset>
-          <label for="email-input">Ваш e-mail:</label>
-          <input name="email-input" id="email-input" placeholder="email@example.com" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-          <label for="text-input">Текст письма:</label>
-          <textarea name="text-input" id="text-input" placeholder="В свободной форме" tabindex="3" required></textarea>
-        </fieldset>
-        <fieldset>
-          <button class="contact-form__btn" type="submit">ОТПРАВИТЬ</button>
-        </fieldset>
+        <button class="contact-form__btn" type="submit">Отправить</button>
       </form>
     </div>
   </body>

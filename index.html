@@ -118,23 +118,20 @@
     </footer>
     <div class="contact-form__container">
       <p class="contact-form__title">Напишите нам</p>
-      <a class="contact-form__close" href="#">&times;</a>
+      <button class="btn contact-form__close" type="button">Закрыть</button>
       <form class="contact-form" action="#" method="POST">
         <fieldset>
-          <label for="name-input">Ваше имя:</label>
-          <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" tabindex="1" required autofocus>
+          <div>
+            <label for="name-input">Ваше имя:<input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required></label>
+          </div>
+          <div>
+            <label for="email-input">Ваш e-mail:<input name="email-input" id="email-input" placeholder="email@example.com" type="email" required></label>
+          </div>
+          <div>
+            <label for="text-input">Текст письма:<textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea></label>
+          </div>
         </fieldset>
-        <fieldset>
-          <label for="email-input">Ваш e-mail:</label>
-          <input name="email-input" id="email-input" placeholder="email@example.com" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-          <label for="text-input">Текст письма:</label>
-          <textarea name="text-input" id="text-input" placeholder="В свободной форме" tabindex="3" required></textarea>
-        </fieldset>
-        <fieldset>
-          <button class="contact-form__btn" type="submit">ОТПРАВИТЬ</button>
-        </fieldset>
+        <button class="contact-form__btn" type="submit">Отправить</button>
       </form>
     </div>
   </body>
