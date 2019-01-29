@@ -39,26 +39,20 @@
         </div>
       </section>
       <section class="grid">
-        <div class="grid__item">
-          <div class="media-item">
-              <h3 class="media-item__title">Веб-сайты</h3>
-              <p class="media-item__text">Мир никогда не будет прежним после того, как увидит ваш сайт!</p>
-              <a href="#" class="btn media-item__link">Заказать</a>
-          </div>
+        <div class="media-item">
+            <h3 class="media-item__title">Веб-сайты</h3>
+            <p class="media-item__text">Мир никогда не будет прежним после того, как увидит ваш сайт!</p>
+            <a href="#" class="btn media-item__link">Заказать</a>
         </div>
-        <div class="grid__item">
-          <div class="media-item">
-              <h3 class="media-item__title">Приложения</h3>
-              <p class="media-item__text">Покорите топ-10 приложений в AppStore и Google Play</p>
-              <a href="#" class="btn media-item__link">Заказать</a>
-          </div>
+        <div class="media-item">
+            <h3 class="media-item__title">Приложения</h3>
+            <p class="media-item__text">Покорите топ-10 приложений в AppStore и Google Play</p>
+            <a href="#" class="btn media-item__link">Заказать</a>
         </div>
-        <div class="grid__item">
-          <div class="media-item">
-              <h3 class="media-item__title">Презентации</h3>
-              <p class="media-item__text">Вы даже не подозреваете, насколько вы изумительны!</p>
-              <a href="#" class="btn media-item__link">Заказать</a>
-          </div>
+        <div class="media-item">
+            <h3 class="media-item__title">Презентации</h3>
+            <p class="media-item__text">Вы даже не подозреваете, насколько вы изумительны!</p>
+            <a href="#" class="btn media-item__link">Заказать</a>
         </div>
       </section>
       <section class="company">
@@ -101,7 +95,7 @@
     <footer class="footer">
       <div class="contacts">
         <div class="map">
-          <img class="map__image" src="img/map.png" alt="Карта проезда" width="1440" height="416">
+          <img class="map__image" src="img/map.png" alt="Карта с указателем адреса ул. Б.Конюшенная, д. 19/8" width="1440" height="416">
         </div>
         <div class="address">
           <p class="address__title">Nerds design studio</p>
@@ -122,21 +116,21 @@
         </div>
       </div>
     </footer>
-    <div class="contact-form__container" disable>
-      <form class="contact-form" action="" method="POST">
-        <p class="contact-form__title">Напишите нам</p>
-        <a class="contact-form__close" href="#">&times;</a>
+    <div class="contact-form__container">
+      <p class="contact-form__title">Напишите нам</p>
+      <a class="contact-form__close" href="#">&times;</a>
+      <form class="contact-form" action="#" method="POST">
         <fieldset>
           <label for="name-input">Ваше имя:</label>
-          <input name="name-input" placeholder="Имя Фамилия" type="text" tabindex="1" required autofocus>
+          <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
           <label for="email-input">Ваш e-mail:</label>
-          <input name="email-input" placeholder="email@example.com" type="email" tabindex="2" required>
+          <input name="email-input" id="email-input" placeholder="email@example.com" type="email" tabindex="2" required>
         </fieldset>
         <fieldset>
           <label for="text-input">Текст письма:</label>
-          <textarea name="text-input" placeholder="В свободной форме" tabindex="3" required></textarea>
+          <textarea name="text-input" id="text-input" placeholder="В свободной форме" tabindex="3" required></textarea>
         </fieldset>
         <fieldset>
           <button class="contact-form__btn" type="submit">ОТПРАВИТЬ</button>

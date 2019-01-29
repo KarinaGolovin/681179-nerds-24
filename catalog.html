@@ -24,36 +24,48 @@
       <section class="content__filter">
         <h2 class="content__filter--title hidden">Фильтрация товаров</h2>
         <form class="form-filter" action="#" method="GET">
-          <fieldset class="form-filter__item">
-
+          <fieldset class="form-filter__item form-filter__range">
+            <legend>Стоимость:</legend>
+            <label>от<input type="text" name="min-value" value="0"></label>
+            <label>до<input type="text" name="max-value" value="15000"></label>
           </fieldset>
           <fieldset class="form-filter__item form-filter__radio">
-            <legend>Сетка:</p>
-            <ul>
+            <legend>Сетка:</legend>
+            <ul class="grid-list">
               <li>
-                <label><input type="radio" name="grid" id="form-grid" checked>Адаптивная</label>
+                <label><input type="radio" name="grid" checked>Адаптивная</label>
               </li>
               <li>
-                <label><input type="radio" name="grid" id="form-grid">Фиксированная</label>
+                <label><input type="radio" name="grid">Фиксированная</label>
               </li>
               <li>
-                <label><input type="radio" name="grid" id="form-grid">Резиновая</label>
+                <label><input type="radio" name="grid">Резиновая</label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form-filter__item">
-            <legend>Особенности:</label>
-            <div class="form-filter__checkbox">
-              <ul>
-                <li><input type="checkbox" name="features" id="form-features" checked><span>Слайдер</span></li>
-                <li><input type="checkbox" name="features" id="form-features"><span>Блок преимуществ</span></li>
-                <li><input type="checkbox" name="features" id="form-features" checked><span>Новости</span></li>
-                <li><input type="checkbox" name="features" id="form-features"><span>Галерея</span></li>
-                <li><input type="checkbox" name="features" id="form-features"><span>Корзина</span></li>
-              </ul>
-            </div>
+          <fieldset class="form-filter__item form-filter__checkbox">
+            <legend>Особенности:</legend>
+            <ul class="feature-list">
+              <li>
+                <label><input type="checkbox" name="features" checked>Слайдер</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="features">Блок преимуществ</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="features" checked>Новости</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="features">Галерея</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="features">Корзина</label>
+              </li>
+            </ul>
           </fieldset>
-          <button class="form__btn" type="submit">Показать</button>
+          <fieldset>
+            <button class="form-filter__btn" type="submit">Показать</button>
+          </fieldset>
         </form>
       </section>
       <section class="content__right">
@@ -118,7 +130,7 @@
     <footer class="footer">
       <div class="contacts">
         <div class="map">
-          <img class="map__image" src="img/map.png" alt="Карта" width="1440" height="416">
+          <img class="map__image" src="img/map.png" alt="Карта с указателем адреса ул. Б.Конюшенная, д. 19/8" width="1440" height="416">
           <div class="map__pin"></div>
         </div>
         <div class="address">
@@ -140,21 +152,21 @@
         </div>
       </div>
     </footer>
-    <div class="form-container">
-      <form class="contact-form" action="" method="POST">
-        <p class="contact-form__title">Напишите нам</p>
-        <a class="contact-form__close" href="#">&times;</a>
+    <div class="contact-form__container">
+      <p class="contact-form__title">Напишите нам</p>
+      <a class="contact-form__close" href="#">&times;</a>
+      <form class="contact-form" action="#" method="POST">
         <fieldset>
           <label for="name-input">Ваше имя:</label>
-          <input name="name-input" placeholder="Имя Фамилия" type="text" tabindex="1" required autofocus>
+          <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
           <label for="email-input">Ваш e-mail:</label>
-          <input name="email-input" placeholder="email@example.com" type="email" tabindex="2" required>
+          <input name="email-input" id="email-input" placeholder="email@example.com" type="email" tabindex="2" required>
         </fieldset>
         <fieldset>
           <label for="text-input">Текст письма:</label>
-          <textarea name="text-input" placeholder="В свободной форме" tabindex="3" required></textarea>
+          <textarea name="text-input" id="text-input" placeholder="В свободной форме" tabindex="3" required></textarea>
         </fieldset>
         <fieldset>
           <button class="contact-form__btn" type="submit">ОТПРАВИТЬ</button>
