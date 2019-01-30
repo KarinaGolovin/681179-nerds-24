@@ -26,8 +26,15 @@
         <form class="form-filter" action="#" method="GET">
           <fieldset class="form-filter__item">
             <legend>Стоимость:</legend>
-            <label>от<input type="number" name="min-value" min="0" max="10" value="0"></label>
-            <label>до<input type="number" name="max-value" min="0" max="15000" value="15000"></label>
+            <div class="range-area">
+              <div class="range-panel">
+                <div class="range-panel__scale"></div>
+                <div class="range-panel__controller-min"></div>
+                <div class="range-panel_controller-max"></div>
+              </div>
+              <label>от<input type="number" name="min-value" min="0" value="0"></label>
+              <label>до<input type="number" name="max-value" min="0" value="15000"></label>
+            </div>
           </fieldset>
           <fieldset class="form-filter__item">
             <legend>Сетка:</legend>
@@ -69,6 +76,16 @@
         </form>
       </section>
       <section class="content__right">
+        <div class="sorter">
+          <p>Сортировать:</p>
+          <ul class="sorter__list">
+            <li><a href="#"></a>По цене</li>
+            <li><a href="#"></a>По типу</li>
+            <li><a href="#"></a>По названию</li>
+            <li class="sorter__button-down visuallyhidden"><a href="#">По убыванию</a></li>
+            <li class="sorter__button-up visuallyhidden"><a href="#">По возрастанию</a></li>
+          </ul>
+        </div>
         <div class="grid">
           <div class="preview">
             <img class="preview__image" src="img/img-sedona.png" alt="Образец сайта Sedona" width="360" height="576">
@@ -131,7 +148,6 @@
       <div class="contacts">
         <div class="map">
           <img class="map__image" src="img/map.png" alt="Карта с указателем адреса ул. Б.Конюшенная, д. 19/8" width="1440" height="416">
-          <div class="map__pin"></div>
         </div>
         <div class="address">
           <p class="address__title">Nerds design studio</p>
