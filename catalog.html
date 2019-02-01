@@ -8,7 +8,7 @@
     <header class="header">
       <a href="index.html" class="logo"><img src="img/svg/nerds-logo.svg" alt="Логотип дизайн-студии Нёрдс" width="160" height="65"></a>
       <nav class="navigation">
-        <ul>
+        <ul class="navigation__list">
           <li class="navigation__item"><a class="link" href="index.html">Студия</a></li>
           <li class="navigation__item"><a class="link" href="#">Клиенты</a></li>
           <li class="navigation__item"><a class="link" href="#">Магазин</a></li>
@@ -18,8 +18,8 @@
       <a href="#" class="link cart">Корзина</a>
     </header>
     <h1 class="page-title">Магазин готовых шаблонов</h1>
-    <main class="content">
-      <section class="content__filter">
+    <main class="grid content">
+      <section class="grid__column content__filter">
         <h2 class="visuallyhidden">Фильтрация товаров</h2>
         <form class="form-filter" action="https://echo.htmlacademy.ru" method="GET">
           <fieldset class="form-filter__item">
@@ -73,7 +73,7 @@
           </fieldset>
         </form>
       </section>
-      <section class="content__shop">
+      <section class="grid__column content__shop">
         <h2 class="visuallyhidden">Выбор товаров</h2>
         <div class="sorter">
           <p>Сортировать:</p>
@@ -136,10 +136,10 @@
           </div>
         </div>
         <div class="pagination">
-            <a class="pagination__active" href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a  class="btn pagination__next" href="#">Следующая</a>
+            <a class="pagination__item pagination__item--active" href="#">1</a>
+            <a class="pagination__item" href="#">2</a>
+            <a class="pagination__item" href="#">3</a>
+            <a  class="btn pagination__item pagination__item--next" href="#">Следующая</a>
         </div>
       </section>
     </main>
@@ -167,26 +167,28 @@
         </div>
       </div>
     </footer>
-    <div class="contact-form__container">
-      <p class="contact-form__title">Напишите нам</p>
-      <button class="btn contact-form__close" type="button">Закрыть</button>
-      <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
-        <fieldset>
-          <div>
-            <label for="name-input">Ваше имя:</label>
-            <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
-          </div>
-          <div>
-            <label for="email-input">Ваш e-mail:</label>
-            <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
-          </div>
-          <div>
-            <label for="text-input">Текст письма:</label>
-            <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
-          </div>
-        </fieldset>
-        <button class="btn contact-form__btn" type="submit">Отправить</button>
-      </form>
-    </div>
+    <section class="modal">
+      <p class="modal__title">Напишите нам</p>
+      <button class="modal__close" type="button">Закрыть</button>
+      <div class="modal__content">
+        <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
+          <fieldset>
+            <div>
+              <label for="name-input">Ваше имя:</label>
+              <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
+            </div>
+            <div>
+              <label for="email-input">Ваш e-mail:</label>
+              <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
+            </div>
+            <div>
+              <label for="text-input">Текст письма:</label>
+              <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
+            </div>
+          </fieldset>
+          <button class="btn contact-form__btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
   </body>
 </html>

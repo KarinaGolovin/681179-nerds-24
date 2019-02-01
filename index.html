@@ -8,7 +8,7 @@
     <header class="header">
       <span class="logo"><img src="img/svg/nerds-logo.svg" alt="Логотип дизайн-студии Нёрдс" width="160" height="65"></span>
       <nav class="navigation">
-        <ul>
+        <ul class="navigation__list">
           <li class="navigation__item"><a class="link" href="#">Студия</a></li>
           <li class="navigation__item"><a class="link" href="#">Клиенты</a></li>
           <li class="navigation__item"><a class="link" href="catalog.html">Магазин</a></li>
@@ -54,7 +54,7 @@
             <a href="#" class="btn media-item__link">Заказать</a>
         </div>
       </section>
-      <section class="company">
+      <section class="grid company">
         <h2 class="visuallyhidden">О дизайн-студии Нёрдс</h2>
         <div class="company__description">
           <p class="company__text company__text--big">Мы – маленькая, но гордая дизайн-студия из Краснодара.</p>
@@ -69,7 +69,7 @@
         <div class="company__statistic">
           <img src="img/png/nerds-illustration.png" alt="Иллюстративный логотип компании Нёрдс" width="360" height="208">
           <p class="company-text company-text--description">С 2004 года любим точность во всем:</p>
-          <table class="company__table">
+          <table class="table company__table">
             <tr>
               <td>Уровень самоотдачи</td>
               <td>Соблюдение сроков</td>
@@ -83,7 +83,7 @@
           </table>
         </div>
       </section>
-      <section class="partners">
+      <section class="grid partners">
         <h2 class="visuallyhidden">Партнеры дизайн-студии Нёрдс</h2>
         <ul class="partners__list">
           <li><a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Сайт наших партнеров HTML Academy"><img src="img/png/partnerlogo-htmlacademy.png" alt="Логотип HTML Academy" width="199" height="68"></a></li>
@@ -118,26 +118,28 @@
         </div>
       </div>
     </footer>
-    <div class="contact-form__container">
-      <p class="contact-form__title">Напишите нам</p>
-      <button class="btn contact-form__close" type="button">Закрыть</button>
-      <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
-        <fieldset>
-          <div>
-            <label for="name-input">Ваше имя:</label>
-            <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
-          </div>
-          <div>
-            <label for="email-input">Ваш e-mail:</label>
-            <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
-          </div>
-          <div>
-            <label for="text-input">Текст письма:</label>
-            <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
-          </div>
-        </fieldset>
-        <button class="btn contact-form__btn" type="submit">Отправить</button>
-      </form>
-    </div>
+    <section class="modal">
+      <p class="modal__title">Напишите нам</p>
+      <button class="btn modal__close" type="button">Закрыть</button>
+      <div class="modal__content">
+        <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
+          <fieldset>
+            <div>
+              <label for="name-input">Ваше имя:</label>
+              <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
+            </div>
+            <div>
+              <label for="email-input">Ваш e-mail:</label>
+              <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
+            </div>
+            <div>
+              <label for="text-input">Текст письма:</label>
+              <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
+            </div>
+          </fieldset>
+          <button class="btn contact-form__btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
   </body>
 </html>
