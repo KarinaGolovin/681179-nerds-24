@@ -6,21 +6,19 @@
   </head>
   <body>
     <header class="header">
-      <a href="index.html" class="logo"><img src="img/svg/nerds-logo.svg" alt="Логотип компании Нёрдс" width="160" height="65"></a>
+      <a href="index.html" class="logo"><img src="img/svg/nerds-logo.svg" alt="Логотип дизайн-студии Нёрдс" width="160" height="65"></a>
       <nav class="navigation">
         <ul>
-          <li><a href="index.html">Студия</a></li>
-          <li><a href="#">Клиенты</a></li>
-          <li><a href="#">Магазин</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li class="navigation__item"><a class="link" href="index.html">Студия</a></li>
+          <li class="navigation__item"><a class="link" href="#">Клиенты</a></li>
+          <li class="navigation__item"><a class="link" href="#">Магазин</a></li>
+          <li class="navigation__item"><a class="link" href="#">Контакты</a></li>
         </ul>
       </nav>
-      <a href="#" class="cart">Корзина</a>
+      <a href="#" class="link cart">Корзина</a>
     </header>
+    <h1 class="page-title">Магазин готовых шаблонов</h1>
     <main class="content">
-      <div class="page-title">
-        <h1>Магазин готовых шаблонов</h1>
-      </div>
       <section class="content__filter">
         <h2 class="visuallyhidden">Фильтрация товаров</h2>
         <form class="form-filter" action="#" method="GET">
@@ -71,59 +69,60 @@
             </ul>
           </fieldset>
           <fieldset>
-            <button class="form-filter__btn" type="submit">Показать</button>
+            <button class="btn form-filter__btn" type="submit" aria-label="Отфильтровать">Показать</button>
           </fieldset>
         </form>
       </section>
-      <section class="content__right">
+      <section class="content__shop">
+        <h2 class="visuallyhidden">Выбор товаров</h2>
         <div class="sorter">
           <p>Сортировать:</p>
           <ul class="sorter__list">
-            <li><a href="#">По цене</a></li>
-            <li><a href="#">По типу</a></li>
-            <li><a href="#">По названию</a></li>
-            <li class="sorter__button-down"><a href="#"><span class="visuallyhidden">По убыванию</span></a></li>
-            <li class="sorter__button-up"><a href="#"><span class="visuallyhidden">По возрастанию</span></a></li>
+            <li><button class="sorter__button" type="button" aria-label="Сортировать по цене">По цене</button></li>
+            <li><button class="sorter__button" type="button" aria-label="Сортировать по типу">По типу</button></li>
+            <li><button class="sorter__button" type="button" aria-label="Сортировать по названию">По названию</button></li>
+            <li><button class="sorter__button sorter__button--down" type="button" aria-label="Сортировать по убыванию"><span class="visuallyhidden">По убыванию</span></button></li>
+            <li><button class="sorter__button sorter__button--up" type="button"aria-label="Сортировать по возрастанию"><span class="visuallyhidden">По возрастанию</span></button></li>
           </ul>
         </div>
         <div class="grid">
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3>Sedona</h3></a>
+              <a href="#"><h3 lang="en">Sedona</h3></a>
               <p>Информационный сайт для туристов</p>
-              <a class="btn" href="#">9 900 руб.</a>
+              <button type="submit" class="btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-sedona.jpg" alt="Образец сайта Sedona" width="360" height="576">
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3>Pink App</h3></a>
+              <a href="#"><h3 lang="en">Pink App</h3></a>
               <p>Продуктовый лендинг приложения для iOS и Android</p>
-              <a class="btn" href="#">9 900 руб.</a>
+              <button type="submit" class="btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-pink.jpg" alt="Образец сайта Pink App" width="360" height="576">
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3>Barbershop</h3></a>
+              <a href="#"><h3 lang="en">Barbershop</h3></a>
               <p>Сайт салона красоты. Для мужчин, да.</p>
-              <a class="btn" href="#">9 900 руб.</a>
+              <button type="submit" class="btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-barbershop.jpg" alt="Образец сайта Barbershop" width="360" height="576">
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3>MISHKA</h3></a>
+              <a href="#"><h3 lang="en">MISHKA</h3></a>
               <p>Интернет-магазин вязаных игрушек</p>
-              <a class="btn" href="#">9 900 руб.</a>
+              <button type="submit" class="btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-mishka.jpg" alt="Образец сайта MISHKA" width="360" height="576">
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3>A Plus</h3></a>
+              <a href="#"><h3 lang="en">A Plus</h3></a>
               <p>Лендинг курсов повышения квалификации</p>
-              <a class="btn" href="#">9 900 руб.</a>
+              <button type="submit" class="btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-aplus.jpg" alt="Образец сайта A Plus" width="360" height="576">
           </div>
@@ -131,7 +130,7 @@
             <div class="preview__description">
               <a href="#"><h3>КВАСТ</h3></a>
               <p>Промо-сайт производителя крафтового кваса</p>
-              <a class="btn" href="#">9 900 руб.</a>
+              <button type="submit" class="btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-kvast.jpg" alt="Образец сайта КВАСТ" width="360" height="576">
           </div>
@@ -140,7 +139,7 @@
             <a class="pagination__active" href="#">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
-            <a  class="pagination__next" href="#">Следующая</a>
+            <a  class="btn pagination__next" href="#">Следующая</a>
         </div>
       </section>
     </main>
@@ -150,7 +149,7 @@
           <img class="map__image" src="img/png/map.png" alt="Карта с указателем адреса улица Большая Конюшенная, дом 19/8" width="1440" height="416">
         </div>
         <div class="address">
-          <p class="address__title">Nerds design studio</p>
+          <p class="address__title" lang="en">Nerds design studio</p>
           <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
           <p class="address__phone">тел. +7(812)275-75-75</p>
           <a href="#" class="btn address__link">Напишите нам</a>
@@ -158,9 +157,9 @@
       </div>
       <div class="social">
         <ul class="social__list">
-          <li><a href="#">VK</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
+          <li><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden" lang="en">VK</span></a></li>
+          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden" lang="en">Facebook</span></a></li>
+          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden" lang="en">Instagram</span></a></li>
         </ul>
         <div class="social__description">
           <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
@@ -186,7 +185,7 @@
             <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
           </div>
         </fieldset>
-        <button class="contact-form__btn" type="submit">Отправить</button>
+        <button class="btn contact-form__btn" type="submit">Отправить</button>
       </form>
     </div>
   </body>
