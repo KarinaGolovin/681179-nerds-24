@@ -15,7 +15,7 @@
           <li class="navigation__item"><a class="link" href="#">Контакты</a></li>
         </ul>
       </nav>
-      <a href="#" class="link--cart">Корзина</a>
+      <a href="#" class="link link--cart">Корзина</a>
     </header>
     <h1 class="visuallyhidden">Главная страница дизайн-студии Нёрдс</h1>
     <section class="slider">
@@ -99,18 +99,18 @@
           <img class="map__image" src="img/png/map.png" alt="Карта с указателем адреса улица Большая Конюшенная, дом 19/8"
             width="1440" height="416">
         </div>
-        <div class="address">
+        <address class="address">
           <p class="address__title" lang="en">Nerds design studio</p>
           <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
-          <p class="address__phone">тел. +7(812)275-75-75</p>
+          <a class="address__phone" href="tel:+78122757575">тел. +7(812)275-75-75</a>
           <a href="#" class="btn address__link">Напишите нам</a>
-        </div>
+        </address>
       </div>
       <div class="social">
         <ul class="social__list">
-          <li><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden" lang="en">VK</span></a></li>
-          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden" lang="en">Facebook</span></a></li>
-          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden" lang="en">Instagram</span></a></li>
+          <li><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden">VK</span></a></li>
+          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden">Facebook</span></a></li>
+          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden">Instagram</span></a></li>
         </ul>
         <div class="social__description">
           <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
@@ -123,20 +123,18 @@
       <button class="btn modal__close" type="button">Закрыть</button>
       <div class="modal__content">
         <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
-          <fieldset>
-            <div>
-              <label for="name-input">Ваше имя:</label>
-              <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
-            </div>
-            <div>
-              <label for="email-input">Ваш e-mail:</label>
-              <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
-            </div>
-            <div>
-              <label for="text-input">Текст письма:</label>
-              <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
-            </div>
-          </fieldset>
+          <div class="contact-form__input">
+            <label for="name-input">Ваше имя:</label>
+            <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
+          </div>
+          <div class="contact-form__input">
+            <label for="email-input">Ваш e-mail:</label>
+            <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
+          </div>
+          <div class="contact-form__input">
+            <label for="text-input">Текст письма:</label>
+            <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
+          </div>
           <button class="btn contact-form__btn" type="submit">Отправить</button>
         </form>
       </div>
