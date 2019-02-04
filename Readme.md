@@ -1,6 +1,7 @@
 # Личный проект «Нёрдс»
 
 * Студент: [Karina Golovin](https://up.htmlacademy.ru/htmlcss/24/user/681179).
+* Наставник: [Stepan Naryshkov]().
 * Наставник: [Георгий Гусаков](https://htmlacademy.ru/profile/georgegus27).
 
 ---

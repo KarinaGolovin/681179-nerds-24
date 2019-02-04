@@ -121,23 +121,21 @@
     <section class="modal">
       <p class="modal__title">Напишите нам</p>
       <button class="btn modal__close" type="button">Закрыть</button>
-      <div class="modal__content">
-        <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
-          <div class="contact-form__input">
-            <label for="name-input">Ваше имя:</label>
-            <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
-          </div>
-          <div class="contact-form__input">
-            <label for="email-input">Ваш e-mail:</label>
-            <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
-          </div>
-          <div class="contact-form__input">
-            <label for="text-input">Текст письма:</label>
-            <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
-          </div>
-          <button class="btn contact-form__btn" type="submit">Отправить</button>
-        </form>
-      </div>
+      <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
+        <div class="contact-form__input">
+          <label for="name-input">Ваше имя:</label>
+          <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
+        </div>
+        <div class="contact-form__input">
+          <label for="email-input">Ваш e-mail:</label>
+          <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
+        </div>
+        <div class="contact-form__input">
+          <label for="text-input">Текст письма:</label>
+          <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
+        </div>
+        <button class="btn contact-form__btn" type="submit">Отправить</button>
+      </form>
     </section>
   </body>
 </html>
