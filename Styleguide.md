@@ -16,7 +16,6 @@ color: rgba(0, 0, 0, 0.3); // нажатие\
 ### Кнопки
 
 #### btn-primary:
-.contact-form__btn\
 
 background-color: #fb565a; // покой\
 background-color: #e74246; // наведение\
