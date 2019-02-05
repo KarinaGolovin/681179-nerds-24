@@ -1,0 +1,17 @@
+html,
+body {
+	min-width: 1200px;
+	min-height: 1750px;
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Roboto', 'Arial', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: #283136;
+}
+
+.modal {
+    display: none;
+}
