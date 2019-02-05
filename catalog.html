@@ -3,23 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Нёрдс</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header class="header">
-      <a href="index.html" class="logo"><img src="img/svg/nerds-logo.svg" alt="Логотип дизайн-студии Нёрдс" width="160" height="65"></a>
-      <nav class="navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item"><a class="link" href="index.html">Студия</a></li>
-          <li class="navigation__item"><a class="link" href="#">Клиенты</a></li>
-          <li class="navigation__item"><a class="link" href="#">Магазин</a></li>
-          <li class="navigation__item"><a class="link" href="#">Контакты</a></li>
-        </ul>
-      </nav>
-      <a href="#" class="link link--cart">Корзина</a>
-    </header>
-    <h1 class="page-title">Магазин готовых шаблонов</h1>
-    <main class="grid content">
-      <section class="grid__column content__filter">
+    <div class="wrap wrap__header">
+      <header class="header">
+        <a href="index.html" class="logo logo--link"><img src="img/svg/nerds-logo.svg" alt="Логотип дизайн-студии Нёрдс"
+            width="160" height="65"></a>
+        <nav class="navigation">
+          <ul class="navigation__list unstyled">
+            <li class="navigation__item"><a class="link" href="index.html">Студия</a></li>
+            <li class="navigation__item"><a class="link" href="#">Клиенты</a></li>
+            <li class="navigation__item"><a class="link" href="#">Магазин</a></li>
+            <li class="navigation__item"><a class="link" href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="link cart">Корзина</a>
+      </header>
+      <h1 class="page-title">Магазин готовых шаблонов</h1>
+    </div>
+    <main class="content">
+      <section class="content__filter">
         <h2 class="visuallyhidden">Фильтрация товаров</h2>
         <form class="form-filter" action="https://echo.htmlacademy.ru" method="GET">
           <fieldset class="form-filter__item">
@@ -27,8 +33,8 @@
             <div class="range-area">
               <div class="range-panel">
                 <div class="range-panel__scale"></div>
-                <div class="range-panel__controller range-panel__controller--min"></div>
-                <div class="range-panel__controller range-panel_controller--max"></div>
+                <div class="range-panel__controller-min"></div>
+                <div class="range-panel_controller-max"></div>
               </div>
               <label>от<input type="number" name="min-value" min="0" value="0"></label>
               <label>до<input type="number" name="max-value" min="0" value="15000"></label>
@@ -36,108 +42,110 @@
           </fieldset>
           <fieldset class="form-filter__item">
             <legend>Сетка:</legend>
-            <ul class="grid-list">
+            <ul class="grid-list unstyled">
               <li>
-                <label><input type="radio" name="grid" value="Adaptive" checked>Адаптивная</label>
+                <label><input type="radio" name="grid" value="Adaptive" checked><span>Адаптивная</span></label>
               </li>
               <li>
-                <label><input type="radio" name="grid" value="Fixed">Фиксированная</label>
+                <label><input type="radio" name="grid" value="Fixed"><span>Фиксированная</span></label>
               </li>
               <li>
-                <label><input type="radio" name="grid" value="Responsive">Резиновая</label>
+                <label><input type="radio" name="grid" value="Responsive"><span>Резиновая</span></label>
               </li>
             </ul>
           </fieldset>
           <fieldset class="form-filter__item">
             <legend>Особенности:</legend>
-            <ul class="feature-list">
+            <ul class="feature-list unstyled">
               <li>
-                <label><input type="checkbox" name="features" value="Carousel" checked>Слайдер</label>
+                <label><input type="checkbox" name="features" value="Carousel" checked><span>Слайдер</span></label>
               </li>
               <li>
-                <label><input type="checkbox" name="features" value="Features">Блок преимуществ</label>
+                <label><input type="checkbox" name="features" value="Features"><span>Блок преимуществ</span></label>
               </li>
               <li>
-                <label><input type="checkbox" name="features" value="News" checked>Новости</label>
+                <label><input type="checkbox" name="features" value="News" checked><span>Новости</span></label>
               </li>
               <li>
-                <label><input type="checkbox" name="features" value="Gallery">Галерея</label>
+                <label><input type="checkbox" name="features" value="Gallery"><span>Галерея</span></label>
               </li>
               <li>
-                <label><input type="checkbox" name="features" value="Cart">Корзина</label>
+                <label><input type="checkbox" name="features" value="Cart"><span>Корзина</span></label>
               </li>
             </ul>
           </fieldset>
-            <button class="btn form-filter__btn" type="submit" aria-label="Отфильтровать">Показать</button>
+          <fieldset>
+            <button class="btn btn__color--neutral form-filter__btn" type="submit" aria-label="Отфильтровать">Показать</button>
+          </fieldset>
         </form>
       </section>
-      <section class="grid__column content__shop">
+      <section class="content__shop">
         <h2 class="visuallyhidden">Выбор товаров</h2>
         <div class="sorter">
           <p>Сортировать:</p>
-          <ul class="sorter__list">
+          <ul class="sorter__list unstyled">
             <li><button class="sorter__button" type="button" aria-label="Сортировать по цене">По цене</button></li>
             <li><button class="sorter__button" type="button" aria-label="Сортировать по типу">По типу</button></li>
             <li><button class="sorter__button" type="button" aria-label="Сортировать по названию">По названию</button></li>
             <li><button class="sorter__button sorter__button--down" type="button" aria-label="Сортировать по убыванию"><span class="visuallyhidden">По убыванию</span></button></li>
-            <li><button class="sorter__button sorter__button--up" type="button"aria-label="Сортировать по возрастанию"><span class="visuallyhidden">По возрастанию</span></button></li>
+            <li><button class="sorter__button sorter__button--up" type="button" aria-label="Сортировать по возрастанию"><span class="visuallyhidden">По возрастанию</span></button></li>
           </ul>
         </div>
         <div class="grid">
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3 lang="en">Sedona</h3></a>
+              <a class="link" href="#"><h3 lang="en">Sedona</h3></a>
               <p>Информационный сайт для туристов</p>
-              <button type="button" class="btn" aria-label="Стоимость услуги 9900 рублей">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-sedona.jpg" alt="Образец сайта Sedona" width="360" height="576">
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3 lang="en">Pink App</h3></a>
+              <a class="link" href="#"><h3 lang="en">Pink App</h3></a>
               <p>Продуктовый лендинг приложения для iOS и Android</p>
-              <button type="button" class="btn" aria-label="Стоимость услуги 9900 рублей">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-pink.jpg" alt="Образец сайта Pink App" width="360" height="576">
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3 lang="en">Barbershop</h3></a>
+              <a class="link" href="#"><h3 lang="en">Barbershop</h3></a>
               <p>Сайт салона красоты. Для мужчин, да.</p>
-              <button type="button" class="btn" aria-label="Стоимость услуги 9900 рублей">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-barbershop.jpg" alt="Образец сайта Barbershop" width="360" height="576">
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3 lang="en">MISHKA</h3></a>
+              <a class="link" href="#"><h3 lang="en">MISHKA</h3></a>
               <p>Интернет-магазин вязаных игрушек</p>
-              <button type="button" class="btn" aria-label="Стоимость услуги 9900 рублей">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-mishka.jpg" alt="Образец сайта MISHKA" width="360" height="576">
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3 lang="en">A Plus</h3></a>
+              <a class="link" href="#"><h3 lang="en">A Plus</h3></a>
               <p>Лендинг курсов повышения квалификации</p>
-              <button type="button" class="btn" aria-label="Стоимость услуги 9900 рублей">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-aplus.jpg" alt="Образец сайта A Plus" width="360" height="576">
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a href="#"><h3>КВАСТ</h3></a>
+              <a class="link" href="#"><h3>КВАСТ</h3></a>
               <p>Промо-сайт производителя крафтового кваса</p>
-              <button type="button" class="btn" aria-label="Стоимость услуги 9900 рублей">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-kvast.jpg" alt="Образец сайта КВАСТ" width="360" height="576">
           </div>
         </div>
         <div class="pagination">
-            <a class="pagination__item pagination__item--active" href="#">1</a>
-            <a class="pagination__item" href="#">2</a>
-            <a class="pagination__item" href="#">3</a>
-            <a  class="btn pagination__item pagination__item--next" href="#">Следующая</a>
+            <a class="btn btn__color--neutral pagination__active" href="#">1</a>
+            <a class="btn btn__color--neutral" href="#">2</a>
+            <a class="btn btn__color--neutral" href="#">3</a>
+            <a class="btn btn__color--neutral pagination__next" href="#">Следующая</a>
         </div>
       </section>
     </main>
@@ -146,18 +154,18 @@
         <div class="map">
           <img class="map__image" src="img/png/map.png" alt="Карта с указателем адреса улица Большая Конюшенная, дом 19/8" width="1440" height="416">
         </div>
-        <address class="address">
+        <div class="address">
           <p class="address__title" lang="en">Nerds design studio</p>
           <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
-          <a class="address__phone" href="tel:+78122757575">тел. +7(812)275-75-75</a>
+          <p class="address__phone">тел. +7(812)275-75-75</p>
           <a href="#" class="btn address__link">Напишите нам</a>
-        </address>
+        </div>
       </div>
       <div class="social">
-        <ul class="social__list">
-          <li><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden">VK</span></a></li>
-          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden">Facebook</span></a></li>
-          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden">Instagram</span></a></li>
+        <ul class="social__list unstyled">
+          <li><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden" lang="en">VK</span></a></li>
+          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden" lang="en">Facebook</span></a></li>
+          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden" lang="en">Instagram</span></a></li>
         </ul>
         <div class="social__description">
           <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
@@ -167,24 +175,22 @@
     </footer>
     <section class="modal">
       <p class="modal__title">Напишите нам</p>
-      <button class="modal__close" type="button">Закрыть</button>
-      <div class="modal__content">
-        <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
-          <div class="contact-form__input">
-            <label for="name-input">Ваше имя:</label>
-            <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
-          </div>
-          <div class="contact-form__input">
-            <label for="email-input">Ваш e-mail:</label>
-            <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
-          </div>
-          <div class="contact-form__input">
-            <label for="text-input">Текст письма:</label>
-            <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
-          </div>
-          <button class="btn contact-form__btn" type="submit">Отправить</button>
-        </form>
-      </div>
+      <button class="btn modal__close" type="button"><span class="visuallyhidden">Закрыть</span></button>
+      <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
+        <div class="contact-form__input">
+          <label for="name-input">Ваше имя:</label>
+          <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
+        </div>
+        <div class="contact-form__input">
+          <label for="email-input">Ваш e-mail:</label>
+          <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
+        </div>
+        <div class="contact-form__input">
+          <label for="text-input">Текст письма:</label>
+          <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
+        </div>
+        <button class="btn contact-form__btn" type="submit">Отправить</button>
+      </form>
     </section>
   </body>
 </html>

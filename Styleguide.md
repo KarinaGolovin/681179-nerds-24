@@ -15,20 +15,29 @@ color: rgba(0, 0, 0, 0.3); // нажатие\
 
 ### Кнопки
 
+#### btn-primary:
+.contact-form__btn\
+
 background-color: #fb565a; // покой\
 background-color: #e74246; // наведение\
 background-color: #d7373b; // нажатие\
 \
+#### btn-secondary:
+
 background-color: #00ca74;\
 background-color: #00bc6c;\
 background-color: #00aa62;\
 \
+#### btn-secondary:
+
 background-color: #efc84a;\
 background-color: #eab534;\
 background-color: #e5a722;\
 \
 color: rgba(255, 255, 255, 0.3); // нажатие\
 \
+#### btn-neutral:
+
 background-color: #eeeeee;\
 background-color: #dfdfdf;\
 background-color: #d5d5d5;\
