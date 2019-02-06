@@ -311,13 +311,46 @@ body {
 
 
 .preview {
+  position: relative;
   margin-bottom: 30px;
+  padding: 40px 0 0;
   border: 1px solid #e5e5e5;
+  background-color: #e5e5e5;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
 }
 
-/* Временно, пока стилю */
+/* Круги на шапке */
+.preview::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  box-shadow: 15px 0 #fff,
+              30px 0 #fff;
+  border-radius: 50%;
+}
+
+.preview__image {
+  display: block;
+}
+
 .preview__description {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: transform .3s .2s, opacity .3s .2s;
+  opacity: 0;
+  transform: translate(0, 100%);
+  background-color: #fff;
+}
+
+.preview:hover .preview__description {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .partners__list {
