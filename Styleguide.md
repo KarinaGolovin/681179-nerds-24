@@ -54,14 +54,14 @@ opacity: 0.1; // нажатие\
 
 - **font-family: Roboto;**\
 
-### 14px
+### 14px fontsize--s
 
 - *font-weight: normal;*
 
 
 Сортировка\
 
-### 16px Основной на странице
+### 16px Основной на странице fontsize--normal
 
 - *font-weight: normal;*
 
@@ -82,7 +82,7 @@ opacity: 0.1; // нажатие\
 Форма отправки\
 Заголовок о фирме ^\
 
-### 18px
+### 18px fontsize--m
 
 - *font-weight: bold;*
 
@@ -90,20 +90,20 @@ opacity: 0.1; // нажатие\
 Описания:\
 Название формы в контактах\
 
-### 24px <H3>
+### 24px <H3> fontsize--mu
 
 - *font-weight: bold;*
 
 
 H3\
 
-### 36px
+### 36px fontsize--l
 
 - *font-weight: bold;*
 
 Футер текст\
 
-### 45px
+### 45px fontsize--xl
 
 - *font-weight: 500;*
 
@@ -115,7 +115,7 @@ H3\
 
 Проценты в таблице\
 
-### 55px <H1>
+### 55px <H1> fontsize--xxl
 
 - *font-weight: 500;*
 

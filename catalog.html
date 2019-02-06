@@ -14,7 +14,7 @@
             width="160" height="65"></a>
         <nav class="navigation">
           <ul class="navigation__list unstyled">
-            <li class="navigation__item"><a class="link" href="index.html">Студия</a></li>
+            <li class="navigation__item"><a class="link" href="#">Студия</a></li>
             <li class="navigation__item"><a class="link" href="#">Клиенты</a></li>
             <li class="navigation__item navigation__item--active"><a class="link" href="#">Магазин</a></li>
             <li class="navigation__item"><a class="link" href="#">Контакты</a></li>
@@ -24,12 +24,12 @@
       </header>
       <h1 class="page-title">Магазин готовых шаблонов</h1>
     </div>
-    <main class="content">
+    <main class="content content--shop">
       <section class="content__filter">
         <h2 class="visuallyhidden">Фильтрация товаров</h2>
         <form class="form-filter" action="https://echo.htmlacademy.ru" method="GET">
           <fieldset class="form-filter__item">
-            <legend>Стоимость:</legend>
+            <legend class="fontsize--m">Стоимость:</legend>
             <div class="range-area">
               <div class="range-panel">
                 <div class="range-panel__scale"></div>
@@ -41,7 +41,7 @@
             </div>
           </fieldset>
           <fieldset class="form-filter__item">
-            <legend>Сетка:</legend>
+            <legend class="fontsize--m">Сетка:</legend>
             <ul class="grid-list unstyled">
               <li>
                 <label><input type="radio" name="grid" value="Adaptive" checked><span>Адаптивная</span></label>
@@ -55,7 +55,7 @@
             </ul>
           </fieldset>
           <fieldset class="form-filter__item">
-            <legend>Особенности:</legend>
+            <legend class="fontsize--m">Особенности:</legend>
             <ul class="feature-list unstyled">
               <li>
                 <label><input type="checkbox" name="features" value="Carousel" checked><span>Слайдер</span></label>
@@ -79,19 +79,19 @@
           </fieldset>
         </form>
       </section>
-      <section class="content__shop">
+      <section class="content__product">
         <h2 class="visuallyhidden">Выбор товаров</h2>
         <div class="sorter">
-          <p>Сортировать:</p>
+          <p class="sorter__title fontsize--m">Сортировать:</p>
           <ul class="sorter__list unstyled">
-            <li><button class="sorter__button" type="button" aria-label="Сортировать по цене">По цене</button></li>
-            <li><button class="sorter__button" type="button" aria-label="Сортировать по типу">По типу</button></li>
-            <li><button class="sorter__button" type="button" aria-label="Сортировать по названию">По названию</button></li>
-            <li><button class="sorter__button sorter__button--down" type="button" aria-label="Сортировать по убыванию"><span class="visuallyhidden">По убыванию</span></button></li>
-            <li><button class="sorter__button sorter__button--up" type="button" aria-label="Сортировать по возрастанию"><span class="visuallyhidden">По возрастанию</span></button></li>
+            <li class="sorter__item"><button class="sorter__button" type="button" aria-label="Сортировать по цене">По цене</button></li>
+            <li class="sorter__item"><button class="sorter__button" type="button" aria-label="Сортировать по типу">По типу</button></li>
+            <li class="sorter__item"><button class="sorter__button" type="button" aria-label="Сортировать по названию">По названию</button></li>
+            <li class="sorter__item"><button class="sorter__button sorter__button--down" type="button" aria-label="Сортировать по убыванию"><span class="visuallyhidden">По убыванию</span></button></li>
+            <li class="sorter__item"><button class="sorter__button sorter__button--up" type="button" aria-label="Сортировать по возрастанию"><span class="visuallyhidden">По возрастанию</span></button></li>
           </ul>
         </div>
-        <div class="grid">
+        <div class="grid grid--shop">
           <div class="preview">
             <div class="preview__description">
               <a class="link" href="#"><h3 lang="en">Sedona</h3></a>
