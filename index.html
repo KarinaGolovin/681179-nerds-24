@@ -40,8 +40,8 @@
         </div>
       </section>
     </div>
-    <main class="content">
-      <section class="grid">
+    <main class="content content--main">
+      <section class="grid grid--media">
         <h2 class="visuallyhidden">Услуги дизайн-студии Нёрдс</h2>
         <div class="media-item">
             <h3 class="media-item__title">Веб-сайты</h3>
@@ -59,21 +59,21 @@
             <a href="#" class="btn btn__color--yellow media-item__link">Заказать</a>
         </div>
       </section>
-      <section class="grid company">
+      <section class="grid grid--company">
         <h2 class="visuallyhidden">О дизайн-студии Нёрдс</h2>
         <div class="company__description">
           <p class="company__text company__text--big">Мы – маленькая, но гордая дизайн-студия из Краснодара.</p>
           <p class="company__text">Используем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не покладая рук, как роботы.</p>
           <p class="company__text company__text--description">Выполняем заказы на разработку:</p>
           <ul class="company__list unstyled">
-            <li>Веб-сайтов любой сложности</li>
-            <li>Мобильных приложений для iOS и Android</li>
-            <li>Слайдшоу и видео для корпоративных презентаций</li>
+            <li class="company__item">Веб-сайтов любой сложности</li>
+            <li class="company__item">Мобильных приложений для iOS и Android</li>
+            <li class="company__item">Слайдшоу и видео для корпоративных презентаций</li>
           </ul>
         </div>
         <div class="company__statistic">
           <img src="img/png/nerds-illustration.png" alt="Иллюстративный логотип компании Нёрдс" width="360" height="208">
-          <p class="company-text company-text--description">С 2004 года любим точность во всем:</p>
+          <p class="company__text company__text--description">С 2004 года любим точность во всем:</p>
           <table class="table company__table">
             <tr>
               <td>Уровень самоотдачи</td>
@@ -88,13 +88,13 @@
           </table>
         </div>
       </section>
-      <section class="grid partners">
+      <section class="grid grid--partners">
         <h2 class="visuallyhidden">Партнеры дизайн-студии Нёрдс</h2>
-        <ul class="partners__list unstyled">
-          <li class="partners__item"><a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Сайт наших партнеров HTML Academy"><img src="img/png/partnerlogo-htmlacademy.png" alt="Логотип HTML Academy" width="199" height="68"></a></li>
-          <li class="partners__item"><a href="#" aria-label="Сайт наших партнеров Borodinski"><img src="img/png/partnerlogo-borodinski.png" alt="Логотип Borodinski" width="209" height="90"></a></li>
-          <li class="partners__item"><a href="#" aria-label="Сайт наших партнеров Pink"><img src="img/png/partnerlogo-pink.png" alt="Логотип Pink" width="185" height="52"></a></li>
-          <li class="partners__item"><a href="#" aria-label="Сайт наших партнеров Mishka"><img src="img/png/partnerlogo-mishka.png" alt="Логотип Mishka" width="173" height="84"></a></li>
+        <ul class="partners unstyled">
+          <li class="partners__item"><a class="partners__pic" href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Сайт наших партнеров HTML Academy"><img src="img/png/partnerlogo-htmlacademy.png" alt="Логотип HTML Academy" width="199" height="68"></a></li>
+          <li class="partners__item"><a class="partners__pic" href="#" aria-label="Сайт наших партнеров Borodinski"><img src="img/png/partnerlogo-borodinski.png" alt="Логотип Borodinski" width="209" height="90"></a></li>
+          <li class="partners__item"><a class="partners__pic" href="#" aria-label="Сайт наших партнеров Pink"><img src="img/png/partnerlogo-pink.png" alt="Логотип Pink" width="185" height="52"></a></li>
+          <li class="partners__item"><a class="partners__pic" href="#" aria-label="Сайт наших партнеров Mishka"><img src="img/png/partnerlogo-mishka.png" alt="Логотип Mishka" width="173" height="84"></a></li>
         </ul>
       </section>
     </main>
@@ -104,22 +104,25 @@
           <img class="map__image" src="img/png/map.png" alt="Карта с указателем адреса улица Большая Конюшенная, дом 19/8"
             width="1440" height="416">
         </div>
-        <address class="address">
-          <p class="address__title" lang="en">Nerds design studio</p>
+        <div class="address">
+          <p class="address__title fontsize--m" lang="en">Nerds design studio</p>
           <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
-          <a class="address__phone" href="tel:+78122757575">тел. +7(812)275-75-75</a>
+          <p class="address__phone">тел. +7(812)275-75-75</p>
           <a href="#" class="btn address__link">Напишите нам</a>
-        </address>
+        </div>
       </div>
       <div class="social">
         <ul class="social__list unstyled">
-          <li><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden">VK</span></a></li>
-          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden">Facebook</span></a></li>
-          <li><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden">Instagram</span></a></li>
+          <li class="social__item social__item--VK"><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden"
+                lang="en">VK</span></a></li>
+          <li class="social__item social__item--FB"><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden"
+                lang="en">Facebook</span></a></li>
+          <li class="social__item social__item--Inst"><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden"
+                lang="en">Instagram</span></a></li>
         </ul>
         <div class="social__description">
           <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
-          <p class="social__text">Скидка 10% для друзей из социальных сетей.</p>
+          <p class="social__text social__text--small">Скидка 10% для друзей из социальных сетей.</p>
         </div>
       </div>
     </footer>
