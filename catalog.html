@@ -36,47 +36,45 @@
                 <div class="range-panel__controller-min"></div>
                 <div class="range-panel_controller-max"></div>
               </div>
-              <label>от<input type="number" name="min-value" min="0" value="0"></label>
-              <label>до<input type="number" name="max-value" min="0" value="15000"></label>
+              <label>от<input type="number" name="min-value" min="0" max="20000" value="0"></label>
+              <label>до<input type="number" name="max-value" min="0" max="20000" value="15000"></label>
             </div>
           </fieldset>
           <fieldset class="form-filter__item">
             <legend class="fontsize--m">Сетка:</legend>
             <ul class="grid-list unstyled">
-              <li>
-                <label><input type="radio" name="grid" value="Adaptive" checked><span>Адаптивная</span></label>
+              <li class="grid-list__item">
+                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Adaptive" checked><span>Адаптивная</span></label>
               </li>
-              <li>
-                <label><input type="radio" name="grid" value="Fixed"><span>Фиксированная</span></label>
+              <li class="grid-list__item">
+                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Fixed"><span>Фиксированная</span></label>
               </li>
-              <li>
-                <label><input type="radio" name="grid" value="Responsive"><span>Резиновая</span></label>
+              <li class="grid-list__item">
+                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Responsive"><span>Резиновая</span></label>
               </li>
             </ul>
           </fieldset>
           <fieldset class="form-filter__item">
             <legend class="fontsize--m">Особенности:</legend>
             <ul class="feature-list unstyled">
-              <li>
-                <label><input type="checkbox" name="features" value="Carousel" checked><span>Слайдер</span></label>
+              <li class="feature-list__item">
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Carousel" checked><span>Слайдер</span></label>
               </li>
-              <li>
-                <label><input type="checkbox" name="features" value="Features"><span>Блок преимуществ</span></label>
+              <li class="feature-list__item">
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Features"><span>Блок преимуществ</span></label>
               </li>
-              <li>
-                <label><input type="checkbox" name="features" value="News" checked><span>Новости</span></label>
+              <li class="feature-list__item">
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="News" checked><span>Новости</span></label>
               </li>
-              <li>
-                <label><input type="checkbox" name="features" value="Gallery"><span>Галерея</span></label>
+              <li class="feature-list__item">
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Gallery"><span>Галерея</span></label>
               </li>
-              <li>
-                <label><input type="checkbox" name="features" value="Cart"><span>Корзина</span></label>
+              <li class="feature-list__item">
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Cart"><span>Корзина</span></label>
               </li>
             </ul>
           </fieldset>
-          <fieldset>
             <button class="btn btn__color--neutral form-filter__btn" type="submit" aria-label="Отфильтровать">Показать</button>
-          </fieldset>
         </form>
       </section>
       <section class="content__product">
@@ -163,9 +161,9 @@
       </div>
       <div class="social">
         <ul class="social__list unstyled">
-          <li class="social__item social__item--VK"><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden" lang="en">VK</span></a></li>
-          <li class="social__item social__item--FB"><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden" lang="en">Facebook</span></a></li>
-          <li class="social__item social__item--Inst"><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden" lang="en">Instagram</span></a></li>
+          <li class="social__item social__item--vk"><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden" lang="en">VK</span></a></li>
+          <li class="social__item social__item--fb"><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden" lang="en">Facebook</span></a></li>
+          <li class="social__item social__item--inst"><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden" lang="en">Instagram</span></a></li>
         </ul>
         <div class="social__description">
           <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
