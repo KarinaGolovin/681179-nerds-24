@@ -34,23 +34,25 @@
               <div class="range-panel">
                 <div class="range-panel__scale"></div>
                 <div class="range-panel__controller-min"></div>
-                <div class="range-panel_controller-max"></div>
+                <div class="range-panel__controller-max"></div>
               </div>
-              <label>от<input type="number" name="min-value" min="0" max="20000" value="0"></label>
-              <label>до<input type="number" name="max-value" min="0" max="20000" value="15000"></label>
+              <div class="range-panel__inputs">
+                <label>от<input class="range-panel__value" type="number" name="min-value" min="0" max="20000" value="0"></label>
+                <label>до<input class="range-panel__value" type="number" name="max-value" min="0" max="20000" value="15000"></label>
+              </div>
             </div>
           </fieldset>
           <fieldset class="form-filter__item">
             <legend class="fontsize--m">Сетка:</legend>
             <ul class="grid-list unstyled">
               <li class="grid-list__item">
-                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Adaptive" checked><span>Адаптивная</span></label>
+                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Adaptive" checked>Адаптивная</label>
               </li>
               <li class="grid-list__item">
-                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Fixed"><span>Фиксированная</span></label>
+                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Fixed">Фиксированная</label>
               </li>
               <li class="grid-list__item">
-                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Responsive"><span>Резиновая</span></label>
+                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Responsive">Резиновая</label>
               </li>
             </ul>
           </fieldset>
@@ -58,19 +60,19 @@
             <legend class="fontsize--m">Особенности:</legend>
             <ul class="feature-list unstyled">
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Carousel" checked><span>Слайдер</span></label>
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Carousel" checked>Слайдер</label>
               </li>
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Features"><span>Блок преимуществ</span></label>
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Features">Блок преимуществ</label>
               </li>
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="News" checked><span>Новости</span></label>
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="News" checked>Новости</label>
               </li>
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Gallery"><span>Галерея</span></label>
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Gallery">Галерея</label>
               </li>
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Cart"><span>Корзина</span></label>
+                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Cart">Корзина</label>
               </li>
             </ul>
           </fieldset>
@@ -94,7 +96,7 @@
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3 lang="en">Sedona</h3></a>
               <p class="preview__text">Информационный сайт для туристов</p>
-              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-sedona.jpg" alt="Образец сайта Sedona" width="360" height="576">
           </div>
@@ -102,7 +104,7 @@
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3 lang="en">Pink App</h3></a>
               <p class="preview__text">Продуктовый лендинг приложения для iOS и Android</p>
-              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-pink.jpg" alt="Образец сайта Pink App" width="360" height="576">
           </div>
@@ -110,7 +112,7 @@
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3 lang="en">Barbershop</h3></a>
               <p class="preview__text">Сайт салона красоты. Для мужчин, да.</p>
-              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-barbershop.jpg" alt="Образец сайта Barbershop" width="360" height="576">
           </div>
@@ -118,7 +120,7 @@
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3 lang="en">MISHKA</h3></a>
               <p class="preview__text">Интернет-магазин вязаных игрушек</p>
-              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-mishka.jpg" alt="Образец сайта MISHKA" width="360" height="576">
           </div>
@@ -126,7 +128,7 @@
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3 lang="en">A Plus</h3></a>
               <p class="preview__text">Лендинг курсов повышения квалификации</p>
-              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-aplus.jpg" alt="Образец сайта A Plus" width="360" height="576">
           </div>
@@ -134,7 +136,7 @@
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3>КВАСТ</h3></a>
               <p class="preview__text">Промо-сайт производителя крафтового кваса</p>
-              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги">9 900 руб.</button>
+              <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-kvast.jpg" alt="Образец сайта КВАСТ" width="360" height="576">
           </div>
@@ -150,20 +152,23 @@
     <footer class="footer">
       <div class="contacts">
         <div class="map">
-          <img class="map__image" src="img/png/map.png" alt="Карта с указателем адреса улица Большая Конюшенная, дом 19/8" width="1440" height="416">
-        </div>
-        <div class="address">
-          <p class="address__title fontsize--m" lang="en">Nerds design studio</p>
-          <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
-          <p class="address__phone">тел. +7(812)275-75-75</p>
-          <a href="#" class="btn address__link">Напишите нам</a>
+          <div class="content">
+            <div class="address">
+              <p class="address__title fontsize--m" lang="en">Nerds design studio</p>
+              <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
+              <p class="address__phone">тел. +7(812)275-75-75</p>
+              <a href="#" class="btn address__link">Напишите нам</a>
+            </div>
+          </div>
+          <img class="map__image" src="img/png/map.png" alt="Карта с указателем адреса улица Большая Конюшенная, дом 19/8"
+            width="1440" height="416">
         </div>
       </div>
       <div class="social">
         <ul class="social__list unstyled">
-          <li class="social__item social__item--vk"><a href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden" lang="en">VK</span></a></li>
-          <li class="social__item social__item--fb"><a href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden" lang="en">Facebook</span></a></li>
-          <li class="social__item social__item--inst"><a href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden" lang="en">Instagram</span></a></li>
+          <li class="social__item"><a class="social__link social__link--vk" href="#" aria-label="Дизайн-студия Нёрдс во Вконтакте"><span class="visuallyhidden">VK</span></a></li>
+          <li class="social__item"><a class="social__link social__link--fb" href="#" aria-label="Дизайн-студия Нёрдс в Фэйсбуке"><span class="visuallyhidden">Facebook</span></a></li>
+          <li class="social__item"><a class="social__link social__link--inst" href="#" aria-label="Дизайн-студия Нёрдс в Инстаграм"><span class="visuallyhidden">Instagram</span></a></li>
         </ul>
         <div class="social__description">
           <p class="social__text social__text--big">Давайте дружить, это выгодно!</p>
