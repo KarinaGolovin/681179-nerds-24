@@ -1,6 +1,9 @@
-html,
+:root {
+  --content-width: 1160px;
+}
+
 body {
-	min-width: 1440px;
+  min-width: 1440px;
 	margin: 0;
 	padding: 0;
 
@@ -53,7 +56,7 @@ body {
   background: url(../img/svg/cart-icon.svg) no-repeat;
 }
 
-.fontsize--m {
+.address__title {
   font-weight: bold;
   font-size: 18px;
   line-height: 1.67;
@@ -95,39 +98,39 @@ body {
   background-color: #00ca74;
 }
 
-.btn__color--green:hover,
-.btn__color--green:focus {
+.btn__green:hover,
+.btn__green:focus {
   background-color: #00bc6c;
 }
 
-.btn__color--green:active {
+.btn__green:active {
   background-color: #00aa62;
 }
 
-.btn__color--yellow {
+.btn__yellow {
   background-color: #efc84a;
 }
 
-.btn__color--yellow:hover,
-.btn__color--yellow:focus {
+.btn__yellow:hover,
+.btn__yellow:focus {
   background-color: #eab534;
 }
 
-.btn__color--yellow:active {
+.btn__yellow:active {
   background-color: #e5a722;
 }
 
-.btn__color--neutral {
+.btn__neutral {
   background-color: #eeeeee;;
   color: #000000;;
 }
 
-.btn__color--neutral:hover,
-.btn__color--neutral:focus {
+.btn__neutral:hover,
+.btn__neutral:focus {
   background-color: #dfdfdf;
 }
 
-.btn__color--neutral:active {
+.btn__neutral:active {
   background-color: #d5d5d5;
   color: rgba(0, 0, 0, 0.3);
 }
@@ -179,7 +182,7 @@ body {
 .grid--shop {
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 30px 0px 30px 0;
+  margin: 30px 0px;
 }
 
 .grid--media {
@@ -259,7 +262,7 @@ body {
 }
 
 .content {
-  max-width: 1160px;
+  max-width: var(--content-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -288,6 +291,13 @@ body {
   margin-bottom: 15px;
 }
 
+.form-filter__title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.67;
+  text-transform: uppercase;
+}
+
 .range-area {
   margin: 35px 0;
   font-family: Roboto;
@@ -308,6 +318,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .range-panel__scale {
@@ -316,22 +327,14 @@ body {
   background-color: #d7dcde;
 }
 
-.range-panel__controller-min {
+.range-panel__controller {
   width: 3px;
   height: 3px;
   border-radius: 50%;
   background-color: #ababab;
   border: 9px solid #ffffff;
   box-shadow: 0 2px 3px #ababab;
-}
-
-.range-panel__controller-max {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background-color: #ababab;
-  border: 9px solid #ffffff;
-  box-shadow: 0 2px 3px #ababab;
+  position: absolute;
 }
 
 .range-panel__inputs {
@@ -452,6 +455,9 @@ body {
 
 .sorter__title {
   line-height: 1;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .sorter__list {
@@ -576,43 +582,58 @@ body {
 }
 
 .map {
-  position: relative;
+  background: url(../img/png/map.png) no-repeat center;
+  background-size: cover;
+  display: flex;
   background-color: #eeeeee;
 }
 
-.map__image {
-  width: 100%;
-  height: auto;
-  display: block;
+.map__content {
+  width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  padding: 50px 0;
 }
 
 .address {
   background: #ffffff;
   padding: 50px;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 
 .address__title {
   margin: 0 0 30px 0;
   color: #000000;
+  font-style: normal;
+  line-height: 1.67;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .address__text,
 .address__phone {
+  display: block;
+  font-style: normal;
   line-height: 1.13;
   color: #666666;
   margin: 0;
 }
 
 .address__phone {
+  outline: none;
   margin-top: 20px;
   margin-bottom: 35px;
+  text-decoration: none;
+}
+
+.address__phone:hover,
+.address__phone:focus {
+  text-decoration: underline;
+  color: #fb565a;
 }
 
 .social {
-  max-width: 1160px;
+  max-width: var(--content-width);
   margin: 70px auto;
   display: flex;
   justify-content: center;
@@ -722,8 +743,8 @@ body {
   background-image: url(../img/jpg/ill-presentation.jpg);
 }
 
-.media-item__title {
-  margin: 0;
+.media-item__title--m {
+  margin: 20px 0 0 0;
   font-size: 24px;
   font-weight: bold;
   line-height: 1.25;
@@ -739,7 +760,7 @@ body {
 }
 
 .company__description {
-  width: 650px;
+  width: 660px;
 }
 
 .company__statistic {
@@ -750,11 +771,15 @@ body {
   margin-top: 15px;
 }
 
-.company__text--big {
+.company__text--xl {
   font-size: 45px;
   font-weight: 500;
   line-height: 1;
   color: #000000;
+}
+
+.company__text--xs {
+  margin-bottom: 15px;
 }
 
 .company__text--description {
@@ -781,10 +806,6 @@ body {
   vertical-align: middle;
 }
 
-.company__logo {
-  margin: 15px 0;
-}
-
 .company__table {
   margin-top: 40px;
 }
@@ -802,7 +823,7 @@ body {
   color: #000000;
 }
 
-.company__table--value sup {
+.company__table--font-m {
   font-size: 24px;
   font-weight: bold;
 }

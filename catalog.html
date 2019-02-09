@@ -29,12 +29,12 @@
         <h2 class="visuallyhidden">Фильтрация товаров</h2>
         <form class="form-filter" action="https://echo.htmlacademy.ru" method="GET">
           <fieldset class="form-filter__item">
-            <legend class="fontsize--m">Стоимость:</legend>
+            <legend class="form-filter__title">Стоимость:</legend>
             <div class="range-area">
               <div class="range-panel">
                 <div class="range-panel__scale"></div>
-                <div class="range-panel__controller-min"></div>
-                <div class="range-panel__controller-max"></div>
+                <div class="range-panel__controller range-panel__controller-min"></div>
+                <div class="range-panel__controller range-panel__controller-max"></div>
               </div>
               <div class="range-panel__inputs">
                 <label>от<input class="range-panel__value" type="number" name="min-value" min="0" max="20000" value="0"></label>
@@ -43,46 +43,46 @@
             </div>
           </fieldset>
           <fieldset class="form-filter__item">
-            <legend class="fontsize--m">Сетка:</legend>
+            <legend class="form-filter__title">Сетка:</legend>
             <ul class="grid-list unstyled">
               <li class="grid-list__item">
-                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Adaptive" checked>Адаптивная</label>
+                <label class="grid-list__label" for="radio-adaptive"><input class="grid-list__radio" type="radio" id="radio-adaptive" name="grid" value="Adaptive" checked>Адаптивная</label>
               </li>
               <li class="grid-list__item">
-                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Fixed">Фиксированная</label>
+                <label class="grid-list__label" for="radio-fixed"><input class="grid-list__radio" type="radio" id="radio-fixed" name="grid" value="Fixed">Фиксированная</label>
               </li>
               <li class="grid-list__item">
-                <label class="grid-list__label"><input class="grid-list__radio" type="radio" name="grid" value="Responsive">Резиновая</label>
+                <label class="grid-list__label" for="radio-responsive"><input class="grid-list__radio" type="radio" id="radio-responsive" name="grid" value="Responsive">Резиновая</label>
               </li>
             </ul>
           </fieldset>
           <fieldset class="form-filter__item">
-            <legend class="fontsize--m">Особенности:</legend>
+            <legend class="form-filter__title">Особенности:</legend>
             <ul class="feature-list unstyled">
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Carousel" checked>Слайдер</label>
+                <label class="feature-list__label" for="checkbox-carousel"><input class="feature-list__checkbox" type="checkbox" id="checkbox-carousel" name="features" value="Carousel" checked>Слайдер</label>
               </li>
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Features">Блок преимуществ</label>
+                <label class="feature-list__label" for="checkbox-features"><input class="feature-list__checkbox" type="checkbox" id="checkbox-features" name="features" value="Features">Блок преимуществ</label>
               </li>
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="News" checked>Новости</label>
+                <label class="feature-list__label" for="checkbox-news"><input class="feature-list__checkbox" type="checkbox" id="checkbox-news" name="features" value="News" checked>Новости</label>
               </li>
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Gallery">Галерея</label>
+                <label class="feature-list__label" for="checkbox-gallery"><input class="feature-list__checkbox" type="checkbox" id="checkbox-gallery" name="features" value="Gallery">Галерея</label>
               </li>
               <li class="feature-list__item">
-                <label class="feature-list__label"><input class="feature-list__checkbox" type="checkbox" name="features" value="Cart">Корзина</label>
+                <label class="feature-list__label" for="checkbox-cart"><input class="feature-list__checkbox" type="checkbox" id="checkbox-cart" name="features" value="Cart">Корзина</label>
               </li>
             </ul>
           </fieldset>
-            <button class="btn btn__color--neutral form-filter__btn" type="submit" aria-label="Отфильтровать">Показать</button>
+            <button class="btn btn__neutral form-filter__btn" type="submit" aria-label="Отфильтровать">Показать</button>
         </form>
       </section>
       <section class="content__product">
         <h2 class="visuallyhidden">Выбор товаров</h2>
         <div class="sorter">
-          <p class="sorter__title fontsize--m">Сортировать:</p>
+          <p class="sorter__title">Сортировать:</p>
           <ul class="sorter__list unstyled">
             <li class="sorter__item"><button class="sorter__button" type="button" aria-label="Сортировать по цене">По цене</button></li>
             <li class="sorter__item"><button class="sorter__button" type="button" aria-label="Сортировать по типу">По типу</button></li>
@@ -95,7 +95,7 @@
           <div class="preview">
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3 lang="en">Sedona</h3></a>
-              <p class="preview__text">Информационный сайт для туристов</p>
+              <p class="preview__text">Информационный сайт для&nbsp;туристов</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-sedona.jpg" alt="Образец сайта Sedona" width="360" height="576">
@@ -103,7 +103,7 @@
           <div class="preview">
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3 lang="en">Pink App</h3></a>
-              <p class="preview__text">Продуктовый лендинг приложения для iOS и Android</p>
+              <p class="preview__text">Продуктовый лендинг приложения&nbsp;для iOS и Android</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-pink.jpg" alt="Образец сайта Pink App" width="360" height="576">
@@ -111,7 +111,7 @@
           <div class="preview">
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3 lang="en">Barbershop</h3></a>
-              <p class="preview__text">Сайт салона красоты. Для мужчин, да.</p>
+              <p class="preview__text">Сайт салона красоты. Для&nbsp;мужчин, да.</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-barbershop.jpg" alt="Образец сайта Barbershop" width="360" height="576">
@@ -119,7 +119,7 @@
           <div class="preview">
             <div class="preview__description">
               <a class="link preview__link" href="#"><h3 lang="en">MISHKA</h3></a>
-              <p class="preview__text">Интернет-магазин вязаных игрушек</p>
+              <p class="preview__text">Интернет-магазин вязаных&nbsp;игрушек</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
             <img class="preview__image" src="img/jpg/img-mishka.jpg" alt="Образец сайта MISHKA" width="360" height="576">
@@ -142,26 +142,24 @@
           </div>
         </div>
         <div class="pagination">
-            <a class="btn btn__color--neutral pagination__active" href="#">1</a>
-            <a class="btn btn__color--neutral" href="#">2</a>
-            <a class="btn btn__color--neutral" href="#">3</a>
-            <a class="btn btn__color--neutral pagination__next" href="#">Следующая</a>
+            <a class="btn btn__neutral pagination__active" href="#">1</a>
+            <a class="btn btn__neutral" href="#">2</a>
+            <a class="btn btn__neutral" href="#">3</a>
+            <a class="btn btn__neutral pagination__next" href="#">Следующая</a>
         </div>
       </section>
     </main>
     <footer class="footer">
       <div class="contacts">
         <div class="map">
-          <div class="content">
-            <div class="address">
-              <p class="address__title fontsize--m" lang="en">Nerds design studio</p>
+          <div class="map__content">
+            <address class="address">
+              <p class="address__title" lang="en">Nerds design studio</p>
               <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
-              <p class="address__phone">тел. +7(812)275-75-75</p>
+              <a class="address__phone" href="tel:+78122757575">тел. +7(812)275-75-75</a>
               <a href="#" class="btn address__link">Напишите нам</a>
-            </div>
+            </address>
           </div>
-          <img class="map__image" src="img/png/map.png" alt="Карта с указателем адреса улица Большая Конюшенная, дом 19/8"
-            width="1440" height="416">
         </div>
       </div>
       <div class="social">
