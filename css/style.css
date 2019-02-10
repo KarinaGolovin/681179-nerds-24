@@ -359,21 +359,11 @@ body {
   margin-left: 13px;
 }
 
-.grid-list__radio {
-  opacity: 0;
-  margin-left: 25px;
-}
-
 .grid-list__item {
+  position: relative;
+  padding-left:  40px;
   margin: 10px 0 15px 0;
 }
-
-.grid-list__label {
-  position: relative;
-}
-
-/* не верное состояние когда выбран чекбокс?
-Как осуществлять данный функционал с фокусом? */
 
 .grid-list__label::before {
   content: "";
@@ -381,41 +371,27 @@ body {
   position: absolute;
   width: 25px;
   height: 25px;
-  background-image: url(../img/svg/radio-off.svg);
+  background: url(../img/svg/radio-off.svg) no-repeat;
+  left: 0;
   opacity: 0.4;
 }
 
-.grid-list__label:hover::before {
-  opacity: 1;
+.grid-list__radio:checked + .grid-list__label::before {
+  background: url(../img/svg/radio-on.svg) no-repeat;
 }
 
-
-.grid-list__label:active::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: 0px;
-  width: 25px;
-  height: 25px;
-  background-image: url(../img/svg/radio-on.svg);
+.grid-list__radio:focus + .grid-list__label::before {
   opacity: 0.8;
 }
 
-.grid-list__label:checked::after {
-  opacity: 0.4;
+.grid-list__label:hover::before {
+  opacity: 0.8;
 }
 
 .feature-list__item {
-  margin: 10px 0 15px 0;
-}
-
-.feature-list__checkbox {
-  opacity: 0;
-  margin-left: 25px;
-}
-
-.feature-list__label {
   position: relative;
+  padding-left: 40px;
+  margin: 10px 0 15px 0;
 }
 
 .feature-list__label::before {
@@ -426,25 +402,20 @@ body {
   height: 23px;
   background-image: url(../img/svg/checkbox-off.svg);
   opacity: 0.4;
+  left: 0;
+}
+
+.feature-list__checkbox:checked + .feature-list__label::before {
+  background: url(../img/svg/checkbox-on.svg) no-repeat;
+  width: 27px;
+}
+
+.feature-list__checkbox:focus + .feature-list__label::before {
+  opacity: 0.8;
 }
 
 .feature-list__label:hover::before {
   opacity: 0.8;
-}
-
-.feature-list__label:active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  display: inline-block;
-  width: 27px;
-  height: 23px;
-  background-image: url(../img/svg/checkbox-on.svg);
-  opacity: 1;
-}
-
-.feature-list__label:checked::after {
-  opacity: 0.3;
 }
 
 .sorter {
