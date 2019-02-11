@@ -33,58 +33,58 @@
             <div class="range-area">
               <div class="range-panel">
                 <div class="range-panel__scale"></div>
-                <div class="range-panel__controller range-panel__controller-min"></div>
-                <div class="range-panel__controller range-panel__controller-max"></div>
+                <div class="range-panel__controller range-panel__controller--min"></div>
+                <div class="range-panel__controller range-panel__controller--max"></div>
               </div>
-              <div class="range-panel__inputs">
-                <label>от<input class="range-panel__value" type="number" name="min-value" min="0" max="20000" value="0"></label>
-                <label>до<input class="range-panel__value" type="number" name="max-value" min="0" max="20000" value="15000"></label>
+              <div class="range-inputs">
+                <label>от<input class="range-inputs__value" type="number" name="min-value" min="0" max="20000" value="0"></label>
+                <label>до<input class="range-inputs__value" type="number" name="max-value" min="0" max="20000" value="15000"></label>
               </div>
             </div>
           </fieldset>
           <fieldset class="form-filter__item">
             <legend class="form-filter__title">Сетка:</legend>
-            <ul class="grid-list unstyled">
-              <li class="grid-list__item">
-                <input class="grid-list__radio visuallyhidden" type="radio" id="radio-adaptive" name="grid" value="Adaptive" checked>
-                <label class="grid-list__label" for="radio-adaptive">Адаптивная</label>
+            <ul class="form-list unstyled">
+              <li class="form-list__item">
+                <input class="form-list__radio visuallyhidden" type="radio" id="radio-adaptive" name="grid" value="Adaptive" checked>
+                <label class="form-list__label form-list__label--radio" for="radio-adaptive">Адаптивная</label>
               </li>
-              <li class="grid-list__item">
-                <input class="grid-list__radio visuallyhidden" type="radio" id="radio-fixed" name="grid" value="Fixed">
-                <label class="grid-list__label" for="radio-fixed">Фиксированная</label>
+              <li class="form-list__item">
+                <input class="form-list__radio visuallyhidden" type="radio" id="radio-fixed" name="grid" value="Fixed">
+                <label class="form-list__label form-list__label--radio" for="radio-fixed">Фиксированная</label>
               </li>
-              <li class="grid-list__item">
-                <input class="grid-list__radio visuallyhidden" type="radio" id="radio-responsive" name="grid" value="Responsive">
-                <label class="grid-list__label" for="radio-responsive">Резиновая</label>
+              <li class="form-list__item">
+                <input class="form-list__radio visuallyhidden" type="radio" id="radio-responsive" name="grid" value="Responsive">
+                <label class="form-list__label form-list__label--radio" for="radio-responsive">Резиновая</label>
               </li>
             </ul>
           </fieldset>
           <fieldset class="form-filter__item">
             <legend class="form-filter__title">Особенности:</legend>
-            <ul class="feature-list unstyled">
-              <li class="feature-list__item">
-                <input class="feature-list__checkbox visuallyhidden" type="checkbox" id="checkbox-carousel" name="features" value="Carousel" checked>
-                <label class="feature-list__label" for="checkbox-carousel">Слайдер</label>
+            <ul class="form-list unstyled">
+              <li class="form-list__item">
+                <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-carousel" name="features" value="Carousel" checked>
+                <label class="form-list__label form-list__label--checkbox" for="checkbox-carousel">Слайдер</label>
               </li>
-              <li class="feature-list__item">
-                <input class="feature-list__checkbox visuallyhidden" type="checkbox" id="checkbox-features" name="features" value="Features">
-                <label class="feature-list__label" for="checkbox-features">Блок преимуществ</label>
+              <li class="form-list__item">
+                <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-features" name="features" value="Features">
+                <label class="form-list__label form-list__label--checkbox" for="checkbox-features">Блок преимуществ</label>
               </li>
-              <li class="feature-list__item">
-                <input class="feature-list__checkbox visuallyhidden" type="checkbox" id="checkbox-news" name="features" value="News" checked>
-                <label class="feature-list__label" for="checkbox-news">Новости</label>
+              <li class="form-list__item">
+                <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-news" name="features" value="News" checked>
+                <label class="form-list__label form-list__label--checkbox" for="checkbox-news">Новости</label>
               </li>
-              <li class="feature-list__item">
-                <input class="feature-list__checkbox visuallyhidden" type="checkbox" id="checkbox-gallery" name="features" value="Gallery">
-                <label class="feature-list__label" for="checkbox-gallery">Галерея</label>
+              <li class="form-list__item">
+                <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-gallery" name="features" value="Gallery">
+                <label class="form-list__label form-list__label--checkbox" for="checkbox-gallery">Галерея</label>
               </li>
-              <li class="feature-list__item">
-                <input class="feature-list__checkbox visuallyhidden" type="checkbox" id="checkbox-cart" name="features" value="Cart">
-                <label class="feature-list__label" for="checkbox-cart">Корзина</label>
+              <li class="form-list__item">
+                <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-cart" name="features" value="Cart">
+                <label class="form-list__label form-list__label--checkbox" for="checkbox-cart">Корзина</label>
               </li>
             </ul>
           </fieldset>
-            <button class="btn btn__neutral form-filter__btn" type="submit" aria-label="Отфильтровать">Показать</button>
+            <button class="btn btn--neutral form-filter__btn" type="submit" aria-label="Отфильтровать">Показать</button>
         </form>
       </section>
       <section class="content__product">
@@ -150,10 +150,10 @@
           </div>
         </div>
         <div class="pagination">
-            <a class="btn btn__neutral pagination__active" href="#">1</a>
-            <a class="btn btn__neutral" href="#">2</a>
-            <a class="btn btn__neutral" href="#">3</a>
-            <a class="btn btn__neutral pagination__next" href="#">Следующая</a>
+            <a class="btn btn--neutral pagination__active" href="#">1</a>
+            <a class="btn btn--neutral" href="#">2</a>
+            <a class="btn btn--neutral" href="#">3</a>
+            <a class="btn btn--neutral pagination__next" href="#">Следующая</a>
         </div>
       </section>
     </main>
