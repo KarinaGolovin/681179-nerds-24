@@ -694,7 +694,7 @@ body {
   background-image: url(../img/jpg/ill-presentation.jpg);
 }
 
-.media-item__title--m {
+.media-item__title {
   margin: 20px 0 0 0;
   font-size: 24px;
   font-weight: bold;
@@ -761,12 +761,12 @@ body {
   margin-top: 40px;
 }
 
-.company__table--title {
+.table__title {
   display: table-footer-group;
   line-height: 1.13;
 }
 
-.company__table--value {
+.table__value {
   display: table-header-group;
   font-size: 45px;
   font-weight: bold;
@@ -774,7 +774,7 @@ body {
   color: #000000;
 }
 
-.company__table--font-m {
+.table__text--m {
   font-size: 24px;
   font-weight: bold;
 }
