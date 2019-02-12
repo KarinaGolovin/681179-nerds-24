@@ -22,21 +22,28 @@
         <a href="#" class="link link--cart">Корзина</a>
       </header>
       <h1 class="visuallyhidden">Главная страница дизайн-студии Нёрдс</h1>
-      <section class="slider">
-        <div class="slider__element slider__element--active">
-          <p class="slider__title">Долго, дорого, скрупулезно.</p>
-          <p>Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
-          <a href="#" class="btn slider__link">Узнать больше</a>
+      <section class="content content--slider">
+        <h2 class="visuallyhidden">Рекламный слайдер</h2>
+        <div class="slider-element slider-element--one slider-element--active visuallyhidden">
+          <div class="slider-element__content">
+            <p class="slider-element__title">Долго, дорого, скрупулезно.</p>
+            <p>Математически выверенный дизайн<br>для вашего сайта или мобильного приложения.</p>
+            <a href="#" class="btn slider-element__link">Узнать больше</a>
+          </div>
         </div>
-        <div class="slider__element">
-          <p class="slider__title">Любим математику как никто другой</p>
-          <p>Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
-          <a href="#" class="btn slider__link">Узнать больше</a>
+        <div class="slider-element slider-element--two">
+          <div class="slider-element__content">
+            <p class="slider-element__title">Любим математику как никто другой</p>
+            <p class="slider-element__text">Никакого креатива, только математические формулы<br>для расчета идеальных пропорций.</p>
+            <a href="#" class="btn slider-element__link">Узнать больше</a>
+          </div>
         </div>
-        <div class="slider__element">
-          <p class="slider__title">Только ночь, только хардкор</p>
-          <p>Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
-          <a href="#" class="btn slider__link">Узнать больше</a>
+        <div class="slider-element slider-element--three visuallyhidden">
+          <div class="slider-element__content">
+            <p class="slider-element__title">Только ночь, только&nbsp;хардкор</p>
+            <p>Работать днем, как все? Мы против этого.<br>Ближе к полуночи работа только начинается.</p>
+            <a href="#" class="btn slider-element__link">Узнать больше</a>
+          </div>
         </div>
       </section>
     </div>
@@ -123,24 +130,31 @@
         </div>
       </div>
     </footer>
-    <section class="modal">
-      <p class="modal__title">Напишите нам</p>
-      <button class="btn modal__close" type="button"><span class="visuallyhidden">Закрыть</span></button>
-      <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
-        <div class="contact-form__input">
-          <label for="name-input">Ваше имя:</label>
-          <input name="name-input" id="name-input" placeholder="Имя Фамилия" type="text" required>
-        </div>
-        <div class="contact-form__input">
-          <label for="email-input">Ваш e-mail:</label>
-          <input name="email-input" id="email-input" placeholder="email@example.com" type="email" required>
-        </div>
-        <div class="contact-form__input">
-          <label for="text-input">Текст письма:</label>
-          <textarea name="text-input" id="text-input" placeholder="В свободной форме" required></textarea>
-        </div>
-        <button class="btn contact-form__btn" type="submit">Отправить</button>
-      </form>
+    <section class="modal modal--disable overlay" tabindex="-1" aria-hidden="true" role="dialog">
+      <h2 class="visuallyhidden">Модальное окно для связи</h2>
+      <div class="modal__content">
+        <p class="modal__title">Напишите нам</p>
+        <button class="btn btn--close modal__close" type="button" aria-label="Закрыть модальное окно"><span class="visuallyhidden">Закрыть</span></button>
+        <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="name-input">Ваше имя:</label>
+            <input class="contact-form__input" name="name-input" id="name-input" placeholder="Имя Фамилия" type="text"
+              required>
+          </div>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="email-input">Ваш e-mail:</label>
+            <input class="contact-form__input" name="email-input" id="email-input" placeholder="email@example.com" type="email"
+              required>
+          </div>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="text-input">Текст письма:</label>
+            <textarea class="contact-form__input contact-form__input--textarea" name="text-input" id="text-input"
+              placeholder="В свободной форме" required></textarea>
+          </div>
+          <button class="btn contact-form__btn" type="submit">Отправить</button>
+        </form>
+      </div>
     </section>
+    <script src="../js/scripts.js"></script>
   </body>
 </html>
