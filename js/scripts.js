@@ -8,13 +8,16 @@
 
   var modalOpenButton = document.querySelector('.address__link');
   var modalWindow = document.querySelector('.modal');
+  var modalContent = document.querySelector('.modal__content');
   var modalCloseButton = modalWindow.querySelector('.modal__close');
   var modalSubmitButton = modalWindow.querySelector('.contact-form__btn');
 
   function openModal(event) {
     console.log('Its works')
+    event.preventDefault();
     modalWindow.classList.remove('modal--disable');
     modalOpenButton.blur();
+    focusLock.on(modalContent);
   }
 
   function openModalOnEnter(event) {
@@ -24,8 +27,9 @@
     }
   };
 
-  function closeModal(event) {
+  function closeModal() {
     modalWindow.classList.add('modal--disable');
+    focusLock.off(modalContent);
   };
 
   function closeModalOnEnter(event) {
@@ -37,11 +41,13 @@
 
   //Open Modal
   modalOpenButton.addEventListener('click', openModal);
+
   modalOpenButton.addEventListener('focus', function() {
     modalOpenButton.addEventListener('keydown', openModalOnEnter);
   });
+
   modalOpenButton.addEventListener('blur', function() {
-    modalOpenButton.addEventListener('keydown', openModalOnEnter);
+    modalOpenButton.removeEventListener('keydown', openModalOnEnter);
   })
 
   //Close
@@ -64,5 +70,5 @@
 
   // Submit modal
 
-}
-)();
+})();
+
