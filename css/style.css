@@ -66,7 +66,7 @@ body {
   background-color: #fb565a;
   color: #ffffff;
   font-family: 'Roboto', 'Arial', sans-serif;
-  padding: 16px 22px;
+  padding: 16px 20px;
   border: 0;
 	border-radius: 4px;
   font-weight: 500;
@@ -153,11 +153,6 @@ body {
   opacity: 0.1;
 }
 
-.btn.pagination__active {
-  background-color: #ffffff;
-  box-shadow: inset 0 0 0 3px #d5d5d5;
-}
-
 .btn.slider-element__link {
   padding-left: 54px;
   padding-right: 54px;
@@ -171,8 +166,8 @@ body {
 }
 
 .btn.address__link {
-  padding-left: 46px;
-  padding-right: 46px;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .btn.contact-form__btn {
@@ -185,14 +180,9 @@ body {
   padding-right: 88px;
 }
 
-.btn.pagination__next {
-  padding-left: 79px;
-  padding-right: 79px;
-}
-
 .btn.preview__btn {
-  padding-left: 62px;
-  padding-right: 62px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .grid{
@@ -202,7 +192,7 @@ body {
 .grid--shop {
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 30px 0px;
+  margin: 26px 0px;
 }
 
 .grid--media {
@@ -287,7 +277,7 @@ body {
 /* Страница магазина */
 
 .page-title {
-  padding: 15px 5px 5px 5px;
+  padding: 46px 1px 0 0;
   font-size: 55px;
   font-weight: 500;
   line-height: 1;
@@ -309,7 +299,7 @@ body {
 .content--shop {
   display: flex;
   justify-content: space-between;
-  margin: 60px auto;
+  margin: 40px auto 60px auto;
 }
 
 .content__product {
@@ -318,12 +308,18 @@ body {
 
 .content__filter {
   width: 260px;
-  margin-top: 12px;
+  margin-top: 15px;
 }
 
 .form-filter__item {
   border: none;
-  margin-bottom: 15px;
+  padding: 0;
+  margin-bottom: 14px;
+  margin-left: 0px;
+}
+
+.form-filter__item--features {
+  margin-bottom: 30px;
 }
 
 .form-filter__title {
@@ -333,8 +329,16 @@ body {
   text-transform: uppercase;
 }
 
+.form-filter__title--price {
+  letter-spacing: 0.5px;
+}
+
+.form-filter__title--features {
+  padding-top: 15px;
+}
+
 .range-area {
-  margin: 35px 0;
+  margin: 48px 0 40px 0;
   font-family: Roboto;
   font-size: 16px;
   font-weight: normal;
@@ -351,7 +355,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   position: relative;
 }
 
@@ -373,6 +377,7 @@ body {
 
 .range-inputs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -387,13 +392,20 @@ body {
   line-height: 1.38;
   text-align: center;
   color: #283136;
-  margin-left: 13px;
+  margin-left: 10px;
+  outline: none;
+  border-radius: 2px;
+}
+
+.range-inputs__value:hover,
+.range-inputs__value:focus {
+  box-shadow: 0 0 0 2px #ababab;
 }
 
 .form-list__item {
   position: relative;
-  padding-left:  40px;
-  margin: 10px 0 15px 0;
+  padding-left:  36px;
+  margin: 13px 0 15px 0;
 }
 
 .form-list__label::before {
@@ -414,6 +426,10 @@ body {
   height: 25px;
 }
 
+.form-list__item--checkbox {
+  margin: 15px 0 16px 0;
+}
+
 .form-list__label--checkbox::before {
   width: 23px;
   height: 23px;
@@ -432,6 +448,7 @@ body {
   opacity: 0.1;
 }
 
+
 .form-list__checkbox:checked + .form-list__label--checkbox::before {
   background: url(../img/svg/checkbox-on.svg) no-repeat;
   width: 27px;
@@ -449,6 +466,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-bottom: 40px;
 }
 
 .sorter__title {
@@ -459,14 +477,14 @@ body {
 }
 
 .sorter__list {
-  max-width: 360px;
+  width: 360px;
   display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .sorter__item {
-  display: inline-block;
+  margin-right: 26px;
 }
 
 .sorter__button {
@@ -487,22 +505,30 @@ body {
   opacity: 0.6;
 }
 
-.sorter__button:active {
+.sorter__button:active,
+.sorter__button--active {
   opacity: 1;
 }
 
+.sorter__item--down {
+  margin: 0 0 0 21px;
+}
+
 .sorter__button--down::before {
-  display: inline-block;
   content: "";
+  display: inline-block;
   width: 11px;
   height: 10px;
   background: url(../img/svg/icon-down-dir.svg) no-repeat;
-  margin-left: 30px;
+}
+
+.sorter__item--up {
+  margin: 0 0 0 17px;
 }
 
 .sorter__button--up::before {
-  display: inline-block;
   content: "";
+  display: inline-block;
   width: 11px;
   height: 10px;
   background: url(../img/svg/icon-up-dir.svg) no-repeat;
@@ -511,15 +537,14 @@ body {
 
 .preview {
   position: relative;
-  margin-bottom: 30px;
-  padding: 40px 0 0;
+  margin-bottom: 33px;
+  padding: 40px 0 0 0;
   box-shadow: 0 0 0 1px #e5e5e5;
   background-color: #e5e5e5;
   border-radius: 4px 4px 0 0;
   overflow: hidden;
 }
 
-/* Круги на шапке */
 .preview::before {
   content: "";
   position: absolute;
@@ -542,13 +567,16 @@ body {
   display: block;
 }
 
+.preview__title {
+  margin: 25px 0 16px 0;
+}
+
 .preview__btn {
-  margin: 30px 0 43px 0 ;
+  margin: 30px 0 44px 0 ;
 }
 
 .preview__link {
   line-height: 1.67;
-  margin: 16px 0 0 0;
 }
 
 .preview__text {
@@ -577,6 +605,20 @@ body {
 .preview:hover .preview__description {
   transition: transform .3s .3s, opacity .3s .3s;
   transform: translate(0, 0);
+}
+
+.pagination__btn {
+  margin-right: 8px;
+}
+
+.pagination__btn--active {
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 3px #d5d5d5;
+}
+
+.pagination__btn--next {
+  padding-left: 78px;
+  padding-right: 78px;
 }
 
 .map {
@@ -622,7 +664,7 @@ body {
   margin-top: 17px;
   margin-bottom: 38px;
   text-decoration: none;
-  letter-spacing: 0.4px;
+  /* letter-spacing: 0.4px; */
 }
 
 .address__phone:hover,
@@ -723,7 +765,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  transition: opacity .6s ease-in-out;
+  transition: opacity 0.6s cubic-bezier(.75,1.19,.69,1.01);
   opacity: 0;
 }
 
@@ -1036,7 +1078,6 @@ body {
 
 .contact-form__input {
   width: 360px;
-  /* padding: 16px; */
   border: 2px solid rgba(68, 68, 68, 0.5);
   border-radius: 4px;
   letter-spacing: normal;
@@ -1073,6 +1114,11 @@ body {
   display: none;
 }
 
-.animation-fade {
-  animation: fade 1.5s;
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }

@@ -29,7 +29,7 @@
         <h2 class="visuallyhidden">Фильтрация товаров</h2>
         <form class="form-filter" action="https://echo.htmlacademy.ru" method="GET">
           <fieldset class="form-filter__item">
-            <legend class="form-filter__title">Стоимость:</legend>
+            <legend class="form-filter__title form-filter__title--price">Стоимость:</legend>
             <div class="range-area">
               <div class="range-panel">
                 <div class="range-panel__scale"></div>
@@ -59,26 +59,26 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form-filter__item">
-            <legend class="form-filter__title">Особенности:</legend>
+          <fieldset class="form-filter__item form-filter__item--features">
+            <legend class="form-filter__title form-filter__title--features">Особенности:</legend>
             <ul class="form-list unstyled">
-              <li class="form-list__item">
+              <li class="form-list__item form-list__item--checkbox">
                 <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-carousel" name="features" value="Carousel" checked>
                 <label class="form-list__label form-list__label--checkbox" for="checkbox-carousel">Слайдер</label>
               </li>
-              <li class="form-list__item">
+              <li class="form-list__item form-list__item--checkbox">
                 <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-features" name="features" value="Features">
                 <label class="form-list__label form-list__label--checkbox" for="checkbox-features">Блок преимуществ</label>
               </li>
-              <li class="form-list__item">
+              <li class="form-list__item form-list__item--checkbox">
                 <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-news" name="features" value="News" checked>
                 <label class="form-list__label form-list__label--checkbox" for="checkbox-news">Новости</label>
               </li>
-              <li class="form-list__item">
+              <li class="form-list__item form-list__item--checkbox">
                 <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-gallery" name="features" value="Gallery">
                 <label class="form-list__label form-list__label--checkbox" for="checkbox-gallery">Галерея</label>
               </li>
-              <li class="form-list__item">
+              <li class="form-list__item form-list__item--checkbox">
                 <input class="form-list__checkbox visuallyhidden" type="checkbox" id="checkbox-cart" name="features" value="Cart">
                 <label class="form-list__label form-list__label--checkbox" for="checkbox-cart">Корзина</label>
               </li>
@@ -92,17 +92,17 @@
         <div class="sorter">
           <p class="sorter__title">Сортировать:</p>
           <ul class="sorter__list unstyled">
-            <li class="sorter__item"><button class="sorter__button" type="button" aria-label="Сортировать по цене">По цене</button></li>
+            <li class="sorter__item"><button class="sorter__button sorter__button--active" type="button" aria-label="Сортировать по цене">По цене</button></li>
             <li class="sorter__item"><button class="sorter__button" type="button" aria-label="Сортировать по типу">По типу</button></li>
             <li class="sorter__item"><button class="sorter__button" type="button" aria-label="Сортировать по названию">По названию</button></li>
-            <li class="sorter__item"><button class="sorter__button sorter__button--down" type="button" aria-label="Сортировать по убыванию"><span class="visuallyhidden">По убыванию</span></button></li>
-            <li class="sorter__item"><button class="sorter__button sorter__button--up" type="button" aria-label="Сортировать по возрастанию"><span class="visuallyhidden">По возрастанию</span></button></li>
+            <li class="sorter__item sorter__item--down"><button class="sorter__button sorter__button--down sorter__button--active" type="button" aria-label="Сортировать по убыванию"><span class="visuallyhidden">По убыванию</span></button></li>
+            <li class="sorter__item  sorter__item--up"><button class="sorter__button sorter__button--up" type="button" aria-label="Сортировать по возрастанию"><span class="visuallyhidden">По возрастанию</span></button></li>
           </ul>
         </div>
         <div class="grid grid--shop">
           <div class="preview">
             <div class="preview__description">
-              <a class="link preview__link" href="#"><h3 lang="en">Sedona</h3></a>
+              <a class="link preview__link" href="#"><h3 class="preview__title" lang="en">Sedona</h3></a>
               <p class="preview__text">Информационный сайт для&nbsp;туристов</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
@@ -110,7 +110,7 @@
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a class="link preview__link" href="#"><h3 lang="en">Pink App</h3></a>
+              <a class="link preview__link" href="#"><h3 class="preview__title" lang="en">Pink App</h3></a>
               <p class="preview__text">Продуктовый лендинг приложения&nbsp;для iOS и Android</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
@@ -118,7 +118,7 @@
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a class="link preview__link" href="#"><h3 lang="en">Barbershop</h3></a>
+              <a class="link preview__link" href="#"><h3 class="preview__title" lang="en">Barbershop</h3></a>
               <p class="preview__text">Сайт салона красоты. Для&nbsp;мужчин, да.</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
@@ -126,7 +126,7 @@
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a class="link preview__link" href="#"><h3 lang="en">MISHKA</h3></a>
+              <a class="link preview__link" href="#"><h3 class="preview__title" lang="en">MISHKA</h3></a>
               <p class="preview__text">Интернет-магазин вязаных&nbsp;игрушек</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
@@ -134,7 +134,7 @@
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a class="link preview__link" href="#"><h3 lang="en">A Plus</h3></a>
+              <a class="link preview__link" href="#"><h3 class="preview__title" lang="en">A Plus</h3></a>
               <p class="preview__text">Лендинг курсов повышения квалификации</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
@@ -142,7 +142,7 @@
           </div>
           <div class="preview">
             <div class="preview__description">
-              <a class="link preview__link" href="#"><h3>КВАСТ</h3></a>
+              <a class="link preview__link" href="#"><h3 class="preview__title">КВАСТ</h3></a>
               <p class="preview__text">Промо-сайт производителя крафтового кваса</p>
               <button type="submit" class="btn preview__btn" aria-label="Стоимость услуги 9900 рублей.">9 900 руб.</button>
             </div>
@@ -150,10 +150,10 @@
           </div>
         </div>
         <div class="pagination">
-            <a class="btn btn--neutral pagination__active" href="#">1</a>
-            <a class="btn btn--neutral" href="#">2</a>
-            <a class="btn btn--neutral" href="#">3</a>
-            <a class="btn btn--neutral pagination__next" href="#">Следующая</a>
+            <a class="btn btn--neutral pagination__btn pagination__btn--active" href="#">1</a>
+            <a class="btn btn--neutral pagination__btn" href="#">2</a>
+            <a class="btn btn--neutral pagination__btn" href="#">3</a>
+            <a class="btn btn--neutral pagination__btn pagination__btn--next" href="#">Следующая</a>
         </div>
       </section>
     </main>
@@ -164,7 +164,7 @@
             <address class="address">
               <p class="address__title" lang="en">NЁRDS DESIGN STUDIO</p>
               <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
-              <a class="address__phone" href="tel:+78122757575">тел. +7(812)275-75-75</a>
+              <a class="address__phone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
               <a href="#" class="btn address__link">Напишите нам</a>
             </address>
           </div>
