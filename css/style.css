@@ -46,6 +46,8 @@ body {
 .link--cart::before {
   margin-right: 25px;
   display: inline-block;
+  position: relative;
+  top: 2px;
   content: "";
   width:15px;
   height:15px;
@@ -164,8 +166,8 @@ body {
 
 .btn.media-item__link {
   margin-top: 5px;
-  padding-left: 39px;
-  padding-right: 39px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .btn.address__link {
@@ -212,13 +214,13 @@ body {
 .grid--company {
   border-top: 2px solid #eeeeee;
   justify-content: space-between;
-  padding: 40px 0;
+  padding: 40px 0 50px 0;
 }
 
 .grid--partners {
   border-top: 2px solid #eeeeee;
   border-bottom: 2px solid #eeeeee;
-  padding: 40px 0;
+  padding: 42px 0;
 }
 
 .wrap {
@@ -588,16 +590,16 @@ body {
   width: 1160px;
   margin: 0 auto;
   display: flex;
-  padding: 50px 0;
+  padding: 53px 0;
 }
 
 .address {
   background: #ffffff;
-  padding: 50px;
+  padding: 48px 50px 48px 48px;
 }
 
 .address__title {
-  margin: 0 0 30px 0;
+  margin: 1px 0 24px 1px;
   color: #000000;
   font-style: normal;
   line-height: 1.67;
@@ -611,15 +613,16 @@ body {
   font-style: normal;
   line-height: 1.13;
   color: #666666;
-  margin: 0;
+  margin: 0 0 0 3px;
 }
 
 .address__phone {
   display: block;
   outline: none;
-  margin-top: 20px;
-  margin-bottom: 35px;
+  margin-top: 17px;
+  margin-bottom: 38px;
   text-decoration: none;
+  letter-spacing: 0.4px;
 }
 
 .address__phone:hover,
@@ -630,14 +633,15 @@ body {
 
 .social {
   max-width: 1160px;
-  margin: 70px auto;
+  margin: 68px auto;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .social__list {
   display: flex;
-  flex-grow: 2;
+  flex-wrap: wrap;
 }
 
 .social__item:not(:first-child) {
@@ -692,7 +696,8 @@ body {
 }
 
 .social__description {
-  flex-grow: 3;
+  margin-top: 5px;
+  width: 760px;
 }
 
 .social__text--small {
@@ -718,7 +723,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  transition: opacity .6s ease-in;
+  transition: opacity .6s ease-in-out;
   opacity: 0;
 }
 
@@ -740,7 +745,7 @@ body {
 }
 
 .slider-element--three {
-  background: url(../img//png/tablets.png) no-repeat right;
+  background: url(../img//png/tablets.png) no-repeat right 0px top 4px;
 }
 
 .slider-element__content {
@@ -782,8 +787,9 @@ body {
 .slider-switcher__button--active {
   width: 18px;
   height: 18px;
-  background-color: #c1c1c1;
-  box-shadow: inset 0 0 0 4px #ffffff;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px #ffffff inset,
+              0 0 0 7px #c1c1c1 inset;
 }
 
 .media-item {
@@ -832,6 +838,7 @@ body {
 }
 
 .company--description {
+  padding-top: 17px;
   width: 660px;
 }
 
@@ -844,6 +851,7 @@ body {
 }
 
 .company__text--xl {
+  margin-bottom: 35px;
   font-size: 45px;
   font-weight: 500;
   line-height: 1;
@@ -851,7 +859,7 @@ body {
 }
 
 .company__text--xs {
-  margin-bottom: 15px;
+  margin-bottom: 38px;
 }
 
 .company__text--description {
@@ -864,8 +872,12 @@ body {
   margin-top: 30px;
 }
 
+.company__list {
+  margin: 15px 0;
+}
+
 .company__item {
-  margin: 25px 0;
+  margin: 24px 0;
 }
 
 .company__item::before {
@@ -876,6 +888,12 @@ body {
   height: 2px;
   background-color: #fb565a;
   vertical-align: middle;
+}
+
+.company__statistic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .company__table {
@@ -903,23 +921,26 @@ body {
 .partners {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .partners__item {
-  width: 290px;
+  width: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
+.partners__item:not(:nth-child(3n+1)) {
+  width: 300px;
+}
+
 .partners__item:not(:last-child)::after {
  content: "";
  display: inline-block;
  position: absolute;
- top: 25px;
  left: 100%;
+ transform: translate(-50%);
  width: 2px;
  height: 52px;
  background-color: #eeeeee;
@@ -940,6 +961,22 @@ body {
 .partners__pic:active {
   opacity: 0.1;
 }
+
+.partners__img {
+ position: relative;
+ top: 4px;
+}
+
+.partners__img--html-academy {
+  top: 9px;
+  right: 10px;
+}
+
+.partners__img--mishka {
+  top: 7px;
+  left: 10px;
+}
+
 
 .overlay {
   position: fixed;
