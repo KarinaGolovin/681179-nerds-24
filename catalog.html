@@ -20,7 +20,9 @@
             <li class="navigation__item"><a class="link" href="#">Контакты</a></li>
           </ul>
         </nav>
-        <a href="#" class="link link--cart">Корзина</a>
+        <div class="cart">
+          <a href="#" class="link cart__link">Корзина</a>
+        </div>
       </header>
       <h1 class="page-title">Магазин готовых шаблонов</h1>
     </div>
@@ -31,7 +33,7 @@
           <fieldset class="form-filter__item">
             <legend class="form-filter__title form-filter__title--price">Стоимость:</legend>
             <div class="range-area">
-              <div class="range-panel">
+              <div class="range-panel" aria-hidden="true">
                 <div class="range-panel__scale"></div>
                 <div class="range-panel__controller range-panel__controller--min"></div>
                 <div class="range-panel__controller range-panel__controller--max"></div>
@@ -211,7 +213,6 @@
       </div>
     </section>
     <script src="../js/scripts.js"></script>
-    <script src="../js/backend.js"></script>
     <script src="http://unpkg.com/dom-focus-lock"></script>
   </body>
 </html>
