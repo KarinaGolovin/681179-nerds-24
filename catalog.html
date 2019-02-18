@@ -12,15 +12,15 @@
       <header class="header">
         <a href="index.html" class="logo logo--link"><img src="img/svg/nerds-logo.svg" alt="Логотип дизайн-студии Нёрдс"
             width="160" height="65"></a>
-        <nav class="navigation">
+        <nav class="header__navigation navigation">
           <ul class="navigation__list unstyled">
             <li class="navigation__item"><a class="link" href="#">Студия</a></li>
             <li class="navigation__item"><a class="link" href="#">Клиенты</a></li>
-            <li class="navigation__item navigation__item--active"><a class="link" href="#">Магазин</a></li>
+            <li class="navigation__item navigation__item--active"><a class="link" href="catalog.html">Магазин</a></li>
             <li class="navigation__item"><a class="link" href="#">Контакты</a></li>
           </ul>
         </nav>
-        <div class="cart">
+        <div class="header__cart cart">
           <a href="#" class="link cart__link">Корзина</a>
         </div>
       </header>
@@ -167,7 +167,7 @@
               <p class="address__title" lang="en">NЁRDS DESIGN STUDIO</p>
               <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
               <a class="address__phone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
-              <a href="#" class="btn address__link">Напишите нам</a>
+              <a href="#" class="btn address__link" data-a11y-dialog-show="my-accessible-dialog">Напишите нам</a>
             </address>
           </div>
         </div>
@@ -187,32 +187,35 @@
         </div>
       </div>
     </footer>
-    <section class="modal modal--disable overlay" tabindex="-1" aria-hidden="true" role="dialog">
-      <h2 class="visuallyhidden">Модальное окно для связи</h2>
-      <div class="modal__content">
-        <p class="modal__title">Напишите нам</p>
-        <button class="btn btn--close modal__close" type="button" aria-label="Закрыть модальное окно"><span class="visuallyhidden">Закрыть</span></button>
-        <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
-          <div class="contact-form__field">
-            <label class="contact-form__label" for="name-input">Ваше имя:</label>
-            <input class="contact-form__input" name="name-input" id="name-input" placeholder="Имя Фамилия" type="text"
-              required>
-          </div>
-          <div class="contact-form__field">
-            <label class="contact-form__label" for="email-input">Ваш e-mail:</label>
-            <input class="contact-form__input" name="email-input" id="email-input" placeholder="email@example.com" type="email"
-              required>
-          </div>
-          <div class="contact-form__field">
-            <label class="contact-form__label" for="text-input">Текст письма:</label>
-            <textarea class="contact-form__input contact-form__input--textarea" name="text-input" id="text-input"
-              placeholder="В свободной форме" required></textarea>
-          </div>
-          <button class="btn contact-form__btn" type="submit">Отправить</button>
-        </form>
+    <div class="dialog" id="my-accessible-dialog" aria-hidden="true">
+      <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
+      <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
+        <h2 class="visuallyhidden">Модальное окно для связи</h2>
+        <div class="modal__content">
+          <p class="modal__title">Напишите нам</p>
+          <button class="btn btn--close modal__close" type="button" aria-label="Закрыть модальное окно" data-a11y-dialog-hide><span class="visuallyhidden">Закрыть</span></button>
+          <form class="contact-form" action="https://echo.htmlacademy.ru" method="POST">
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="name-input">Ваше имя:</label>
+              <input class="contact-form__input" name="name-input" id="name-input" placeholder="Имя Фамилия" type="text"
+                required>
+            </div>
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="email-input">Ваш e-mail:</label>
+              <input class="contact-form__input" name="email-input" id="email-input" placeholder="email@example.com" type="email"
+                required>
+            </div>
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="text-input">Текст письма:</label>
+              <textarea class="contact-form__input contact-form__input--textarea" name="text-input" id="text-input" placeholder="В свободной форме"
+                required></textarea>
+            </div>
+            <button class="btn contact-form__btn" type="submit">Отправить</button>
+          </form>
+        </div>
       </div>
-    </section>
+    </div>
+    <script src="../js/a11y-dialog.min.js"></script>
     <script src="../js/scripts.js"></script>
-    <script src="http://unpkg.com/dom-focus-lock"></script>
   </body>
 </html>
