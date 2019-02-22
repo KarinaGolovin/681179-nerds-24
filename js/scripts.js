@@ -132,5 +132,49 @@
       element.addEventListener('click', handleSliderButtonClick);
     });
   });
+
+  // Yandex map
+
+  // Функция ymaps.ready() будет вызвана, когда
+  // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+  ymaps.ready(init);
+
+  var pinCoordinates = [59.938631, 30.323055];
+  var mapCoordinates = [59.93911012407403, 30.321370572738658];
+
+  function init() {
+    // Создание карты.
+    var myMap = new ymaps.Map("map", {
+      // Координаты центра карты.
+      // Порядок по умолчанию: «широта, долгота».
+      // Чтобы не определять координаты центра карты вручную,
+      // воспользуйтесь инструментом Определение координат.
+      center: mapCoordinates,
+      // Уровень масштабирования. Допустимые значения:
+      // от 0 (весь мир) до 19.
+      zoom: 17,
+      controls: []
+    });
+
+    window.map = myMap;
+
+    var myPlacemark = new ymaps.Placemark(pinCoordinates, {
+      hintContent: 'NЁRDS DESIGN STUDIO, ул. Б. Конюшенная, д. 19/8',
+      balloonContent: 'ул. Б. Конюшенная, д. 19/8'
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'img/png/map-marker.png',
+        // Размеры метки.
+        iconImageSize: [231, 190],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-55, -210]
+      });
+
+    myMap.geoObjects.add(myPlacemark);
+  };
 })();
 
