@@ -99,10 +99,14 @@
   // Submit modal
 
   // Slider
-  document.querySelectorAll('.slider').forEach(function (slider) {
-    const sliderButtons = slider.querySelectorAll('.slider-switcher__button');
+  function toArray(nodes) {
+    return [].slice.call(nodes);
+  }
 
-    let activeSlide = slider.querySelector('.slider-element--active');
+  toArray(document.querySelectorAll('.slider')).forEach(function (slider) {
+    const sliderButtons = toArray(slider.querySelectorAll('.slider-switcher__button'));
+
+    let activeSlide = slider.querySelector('.slide--active');
     let currentSliderId = activeSlide.getAttribute('data-id');
     let activeButton = slider.querySelector('.slider-switcher__button[data-id=' + currentSliderId + ']');
 
@@ -114,13 +118,13 @@
         return;
       }
 
-      activeSlide.classList.remove('slider-element--active');
+      activeSlide.classList.remove('slide--active');
       activeButton.classList.remove('slider-switcher__button--active');
 
-      let nextSlide = slider.querySelector('.slider__slide[data-id=' + nextSlideId + ']');
+      let nextSlide = slider.querySelector('.slider__element[data-id=' + nextSlideId + ']');
       let nextButton = clickedButton;
 
-      nextSlide.classList.add('slider-element--active');
+      nextSlide.classList.add('slide--active');
       nextButton.classList.add('slider-switcher__button--active');
 
       activeSlide = nextSlide;
