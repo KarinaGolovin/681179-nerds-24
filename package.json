@@ -1,0 +1,27 @@
+{
+  "name": "nerds",
+  "version": "1.0.0",
+  "description": "* Студент: [Karina Golovin](https://up.htmlacademy.ru/htmlcss/24/user/681179). * Наставник: [Stepan Naryshkov](). * Наставник: [Георгий Гусаков](https://htmlacademy.ru/profile/georgegus27).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "stylelint ./css/style.css",
+    "lint:fix": "stylelint ./css/style.css --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarinaGolovin/681179-nerds-24.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarinaGolovin/681179-nerds-24/issues"
+  },
+  "homepage": "https://github.com/KarinaGolovin/681179-nerds-24#readme",
+  "devDependencies": {
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-order": "^2.0.0"
+  }
+}
