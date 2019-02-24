@@ -25,7 +25,7 @@ describe('check that pages renders correctly', () => {
   it('renders catalog page correctly', async () => {
     const page = await browser.newPage();
     await page.setViewport({ width: 1600, height: 2500 });
-    await page.goto('http://127.0.0.1:5500/catalog');
+    await page.goto('http://127.0.0.1:5500/catalog.html');
     await page.waitFor(pageWaitTimeout);
     const image = await page.screenshot();
 
