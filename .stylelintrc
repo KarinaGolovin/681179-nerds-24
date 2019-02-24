@@ -24,6 +24,8 @@
         "min-height",
         "max-height",
         "display",
+        "justify-content",
+        "align-items",
         "overflow",
         "margin",
         "margin-top",
