@@ -135,10 +135,8 @@ body {
 }
 
 .btn.slide__link {
-  width: 260px;
+  width: 240px;
   margin-top: 8px;
-  padding-right: 54px;
-  padding-left: 54px;
   box-sizing: border-box;
 }
 
@@ -373,11 +371,11 @@ body {
 }
 
 .range-panel__controller--min {
-  left: 0;
+  left: 18px;
 }
 
 .range-panel__controller--max {
-  right: 0;
+  right: 18px;
 }
 
 
