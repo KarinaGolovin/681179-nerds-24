@@ -44,6 +44,7 @@ body {
 
 .btn {
   display: inline-block;
+  vertical-align: middle;
   padding: 16px 20px;
   border: 0;
 	border-radius: 4px;
@@ -60,6 +61,7 @@ body {
   font-stretch: normal;
   outline: none;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .btn:hover,
@@ -180,7 +182,8 @@ body {
 .grid--media {
   display: flex;
   justify-content: flex-start;
-  margin: 80px auto;
+  flex-wrap: wrap;
+  margin: 60px auto;
 }
 
 .grid--company {
@@ -266,10 +269,11 @@ body {
 .cart__link::before {
   content: "";
   position: relative;
-  top: 1px;
+  top: 3px;
   width:15px;
   height:15px;
   display: inline-block;
+  vertical-align: text-top;
   margin-right: 25px;
   background: url(../img/svg/cart-icon.svg) no-repeat;
 }
@@ -383,6 +387,14 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  color: #283136;
+  line-height: 1.38;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .range-inputs__value {
@@ -392,11 +404,6 @@ body {
   border: none;
   border-radius: 2px;
   background-color: #eeeeee;
-  color: #283136;
-  line-height: 1.38;
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-size: 16px;
-  font-weight: normal;
   outline: none;
   text-align: center;
 }
@@ -426,6 +433,7 @@ body {
   position: absolute;
   left: 0;
   display: inline-block;
+  vertical-align: middle;
   opacity: 0.4;
 }
 
@@ -531,11 +539,12 @@ body {
   width: 11px;
   height: 10px;
   display: inline-block;
+  vertical-align: middle;
   background: url(../img/svg/icon-down-dir.svg) no-repeat;
 }
 
 .sorter__item--up {
-  margin: 0 0 0 17px;
+  margin: 0 0 0 18px;
 }
 
 .sorter__button--up::before {
@@ -543,6 +552,7 @@ body {
   width: 11px;
   height: 10px;
   display: inline-block;
+  vertical-align: middle;
   background: url(../img/svg/icon-up-dir.svg) no-repeat;
 }
 
@@ -831,7 +841,7 @@ body {
   margin: 30px 0;
 }
 
-.slider-switcher {
+.switch-panel {
   position: absolute;
   z-index: 1;
   bottom: 96px;
@@ -843,7 +853,7 @@ body {
   transform: translate(-50%);
 }
 
-.slider-switcher__button {
+.switch-panel__button {
   width: 18px;
   height: 18px;
   border:0;
@@ -854,20 +864,25 @@ body {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.slider-switcher__button:hover,
-.slider-switcher__button:focus {
+.switch-panel__button:hover,
+.switch-panel__button:focus {
   background-color: #ffffff;
   box-shadow: 0 0 0 5px #ffffff inset,
               0 0 0 7px #c1c1c1 inset;
 }
 
-.slider-switcher__button--active {
+.switch-panel__button--active {
   box-shadow: 0 0 0 5px #ffffff inset,
               0 0 0 7px #c1c1c1 inset;
 }
 
 .media-item {
-  width: 300px;
+   width: 300px;
+   margin-bottom: 20px;
+   margin-top: 20px;
+}
+
+.media-item:not(:nth-child(3n+1)) {
   margin-right: 100px;
 }
 
@@ -1024,7 +1039,7 @@ body {
   left: 100%;
   width: 2px;
   height: 52px;
-  display: inline-block;
+  /* display: inline-block; */
   background-color: #eeeeee;
   transform: translate(-50%);
 }
@@ -1060,6 +1075,46 @@ body {
   left: 10px;
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(2000px);
+  }
+
+  75% {
+    transform: translateY(-15px);
+  }
+
+  90% {
+    transform: translateY(7px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
 .modal {
   z-index: 1;
   display: flex;
@@ -1076,6 +1131,14 @@ body {
   padding: 68px 100px 70px 100px;
   background-color: #ffffff;
   box-shadow: 0px 20px 50px 1px rgba(0, 1, 1, 0.7);
+}
+
+.modal__content--active {
+  animation: bounce 0.6s ease-out;
+}
+
+.modal__content--error {
+  animation: shake 0.6s;
 }
 
 .modal__title {
@@ -1154,47 +1217,11 @@ body {
   resize: none;
 }
 
-/* -------------------------------------------------------------------------- *\
- * Necessary styling for the dialog to work
- * -------------------------------------------------------------------------- */
-
-/**
- * When `<dialog>` is properly supported, the overlay is implied and can be
- * styled with `::backdrop`, which means the DOM one should be removed.
- */
-[data-a11y-dialog-native] .dialog-overlay {
-  display: none;
-}
-
-/**
- * When `<dialog>` is not supported, its default display is `inline` which can
- * cause layout issues.
- */
-dialog[open] {
-  display: block;
-}
-
-.dialog[aria-hidden="true"] {
-  display: none;
-}
-
-/* -------------------------------------------------------------------------- *\
- * Styling to make the dialog look like a dialog
- * -------------------------------------------------------------------------- */
-
-.dialog-overlay {
+.overlay {
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-}
-
-.dialog-content {
-  position: fixed;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
