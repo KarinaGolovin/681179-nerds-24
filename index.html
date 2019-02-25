@@ -7,7 +7,7 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="no-js">
     <div class="wrap wrap--home">
       <header class="header">
         <span class="logo"><img src="img/svg/nerds-logo.svg" alt="Логотип дизайн-студии Нёрдс" width="160" height="65"></span>
@@ -124,7 +124,7 @@
             <p class="address__title" lang="en">NЁRDS DESIGN STUDIO</p>
             <p class="address__text">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
             <a class="address__phone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
-            <a href="#" class="btn address__link" data-a11y-dialog-show="my-accessible-dialog">Напишите нам</a>
+            <a href="#contact-us" class="btn address__link" data-a11y-dialog-show="my-accessible-dialog">Напишите нам</a>
           </address>
         </div>
       </div>
@@ -140,7 +140,7 @@
         </div>
       </div>
     </footer>
-    <div class="modal modal--disable overlay" tabindex="-1" aria-hidden="true" role="dialog">
+    <div class="modal modal--disable overlay" id="contact-us" tabindex="-1" aria-hidden="true" role="dialog">
         <h2 class="visuallyhidden">Модальное окно для связи</h2>
         <div class="modal__content">
           <p class="modal__title">Напишите нам</p>

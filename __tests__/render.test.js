@@ -1,7 +1,7 @@
 // eslint is looking for `puppeteer` at root level package.json
 // eslint-disable-next-line import/no-unresolved
 const puppeteer = require('puppeteer');
-const pageWaitTimeout = 1200;
+const pageWaitTimeout = 1500;
 
 const HOME_PAGE = 'http://127.0.0.1:5500/';
 const CATALOG_PAGE = 'http://127.0.0.1:5500/catalog.html';

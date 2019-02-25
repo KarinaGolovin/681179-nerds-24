@@ -363,6 +363,11 @@ body {
   background-color: #d7dcde;
 }
 
+.range-panel__scale--active {
+  position: absolute;
+  background-color: #00ca74;
+}
+
 .range-panel__controller {
   position: absolute;
   top: 29px;
@@ -1039,7 +1044,6 @@ body {
   left: 100%;
   width: 2px;
   height: 52px;
-  /* display: inline-block; */
   background-color: #eeeeee;
   transform: translate(-50%);
 }
@@ -1077,41 +1081,41 @@ body {
 
 @keyframes bounce {
   0% {
-    transform: translateY(2000px);
+    transform: translateY(30%);
+    opacity: 0;
   }
 
   75% {
-    transform: translateY(-15px);
+    transform: translateY(-1.5%);
+    opacity: 0.85;
   }
 
   90% {
-    transform: translateY(7px);
+    transform: translateY(0.5%);
+    opacity: 0.95;
   }
 
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
   }
 
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    transform: translateX(-10px);
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
   }
 
-  20%,
-  40%,
-  60%,
-  80% {
-    transform: translateX(10px);
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
 
@@ -1126,6 +1130,22 @@ body {
   display: none;
 }
 
+.no-js .modal {
+  display: flex;
+  position: static;
+  justify-content: center;
+  outline: none;
+}
+
+.no-js .modal__content {
+  box-shadow: none;
+  opacity: 1;
+}
+
+.no-js .modal__close {
+  display: none;
+}
+
 .modal__content {
   position: relative;
   padding: 68px 100px 70px 100px;
@@ -1134,11 +1154,11 @@ body {
 }
 
 .modal__content--active {
-  animation: bounce 0.6s ease-out;
+  animation: bounce 0.3s;
 }
 
 .modal__content--error {
-  animation: shake 0.6s;
+  animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 .modal__title {
