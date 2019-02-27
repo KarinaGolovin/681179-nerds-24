@@ -6,7 +6,7 @@
     esc: 27
   };
 
-  // Remove class which style modal window without js
+  // Remove class which style modal window and catalog page without js
   document.body.classList.remove('no-js');
 
   const modalOpenButton = document.querySelector('.address__link');
@@ -16,13 +16,14 @@
   const modalOverlay = document.querySelector('.overlay');
   const contactForm = modalWindow.querySelector('.contact-form');
   const firstModalInput = modalWindow.querySelector('.contact-form__input');
+  const modalInputs = toArray(modalWindow.querySelectorAll('.contact-form__input'));
   const contactFormSubmit = contactForm.querySelector('.contact-form__btn');
 
   function openModal(event) {
     event.preventDefault();
     modalWindow.classList.remove('modal--disable');
     modalContent.classList.add('modal__content--active');
-
+    modalContent.classList.add('modal__content--active-animation');
     firstModalInput.focus();
     modalOpenButton.blur();
   }
@@ -36,7 +37,12 @@
 
   function closeModal() {
     modalContent.classList.remove('modal__content--active');
+    modalContent.classList.remove('modal__content--active-animation');
+    modalContent.classList.remove('modal__content--error');
     modalWindow.classList.add('modal--disable');
+    modalInputs.forEach(function(input) {
+      input.classList.remove('contact-form__input--error');
+    });
     contactForm.reset();
   };
 
@@ -85,18 +91,34 @@
   document.addEventListener('keydown', closeModalOnEsc);
   modalWindow.addEventListener('click', closeModalOnOutClick);
 
-  //  Input validity check and Submit modal
-  // Add animationend event
-  const nameInput = modalWindow.querySelector('[name=name-input]');
-  const mailInput = modalWindow.querySelector('[name=email-input]');
+  //  Input validity check
+  modalInputs.forEach(function(input) {
+    input.addEventListener('focus', function() {
+      input.classList.remove('contact-form__input--error');
+    });
+    input.addEventListener('blur', validateInput);
+  });
 
-  contactFormSubmit.addEventListener('click', function(event) {
-    modalContent.classList.remove('modal__content--error');
-
-    if (!nameInput.value || !mailInput.value) {
-      event.preventDefault();
-      modalContent.classList.add('modal__content--error');
+  function validateInput(event) {
+    if (event.target.validity.valueMissing || event.target.validity.typeMismatch) {
+      event.target.classList.add('contact-form__input--error');
+    } else if (event.target.validity.valid) {
+      event.target.classList.remove('contact-form__input--error');
     }
+  };
+
+  // Add animationend event on submit error
+  contactFormSubmit.addEventListener('click', function (event) {
+    modalContent.classList.remove('modal__content--error');
+    modalContent.classList.remove('modal__content--active-animation');
+
+    modalInputs.forEach(function(input) {
+      if (!input.value) {
+        setTimeout(function () {
+          modalContent.classList.add('modal__content--error');
+        }, 60);
+      }
+    });
   });
 
   // Slider
@@ -144,23 +166,15 @@
   createMap();
 
   function createMap() {
-    // Функция ymaps.ready() будет вызвана, когда
-    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+    // Run when DOM is ready
     ymaps.ready(init);
 
     var pinCoordinates = [59.938631, 30.323055];
     var mapCoordinates = [59.93911012407403, 30.321370572738658];
 
     function init() {
-      // Создание карты.
       var myMap = new ymaps.Map("map", {
-        // Координаты центра карты.
-        // Порядок по умолчанию: «широта, долгота».
-        // Чтобы не определять координаты центра карты вручную,
-        // воспользуйтесь инструментом Определение координат.
         center: mapCoordinates,
-        // Уровень масштабирования. Допустимые значения:
-        // от 0 (весь мир) до 19.
         zoom: 17,
         controls: []
       });
@@ -169,15 +183,13 @@
         hintContent: 'NЁRDS DESIGN STUDIO, ул. Б. Конюшенная, д. 19/8',
         balloonContent: 'ул. Б. Конюшенная, д. 19/8'
       }, {
-          // Опции.
-          // Необходимо указать данный тип макета.
+          // type
           iconLayout: 'default#image',
-          // Своё изображение иконки метки.
+          // pin image
           iconImageHref: 'img/png/map-marker.png',
-          // Размеры метки.
+          // pin size
           iconImageSize: [231, 190],
-          // Смещение левого верхнего угла иконки относительно
-          // её "ножки" (точки привязки).
+          // pin image x, y shift
           iconImageOffset: [-55, -210]
         });
 

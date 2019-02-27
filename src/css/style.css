@@ -1157,7 +1157,7 @@ body {
   box-shadow: 0px 20px 50px 1px rgba(0, 1, 1, 0.7);
 }
 
-.modal__content--active {
+.modal__content--active-animation {
   animation: bounce 0.3s;
 }
 
@@ -1229,9 +1229,18 @@ body {
   color: #444444;
 }
 
-.contact-form__input:invalid:not(:focus):not(:placeholder-shown) {
+.no-js .contact-form__input:invalid:not(:focus):not(:placeholder-shown) {
   color: #e74246;
   border-color: #e74246;
+}
+
+.contact-form__input--error {
+  color: #e74246;
+  border-color: #e74246;
+}
+
+.contact-form__input--error:not(:hover)::placeholder {
+  color: #e74246;
 }
 
 .contact-form__input--textarea {
