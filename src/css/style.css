@@ -871,6 +871,8 @@ body {
   cursor: pointer;
   outline: none;
   transition: box-shadow 0.3s ease-in-out;
+  appearance: none;
+  font-size: 0;
 }
 
 .switch-panel__button:hover,

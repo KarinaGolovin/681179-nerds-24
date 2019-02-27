@@ -161,6 +161,11 @@
   });
 
   // Range
+  const rangeScale = document.querySelector('.range-panel__scale--active');
+  const rangeControllerMin = document.querySelector('.range-panel__controller--min');
+  const rangeControllerMax = document.querySelector('.range-panel__controller--max');
+  const rangeInputMin = document.querySelector('.range-inputs__value--min');
+  const rangeInputMax = document.querySelector('.range-inputs__value--max');
 
   // Yandex map
   createMap();
