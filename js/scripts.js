@@ -85,19 +85,19 @@
   document.addEventListener('keydown', closeModalOnEsc);
   modalWindow.addEventListener('click', closeModalOnOutClick);
 
-  // //  Input validity check and Submit modal
-  // // Add animationend event
-  // const nameInput = modalWindow.querySelector('[name=name-input]');
-  // const mailInput = modalWindow.querySelector('[name=email-input]');
+  //  Input validity check and Submit modal
+  // Add animationend event
+  const nameInput = modalWindow.querySelector('[name=name-input]');
+  const mailInput = modalWindow.querySelector('[name=email-input]');
 
-  // contactFormSubmit.addEventListener('click', function(event) {
-  //   modalContent.classList.remove('modal__content--error');
+  contactFormSubmit.addEventListener('click', function(event) {
+    modalContent.classList.remove('modal__content--error');
 
-  //   if (!nameInput.value || !mailInput.value) {
-  //     event.preventDefault();
-  //     modalContent.classList.add('modal__content--error');
-  //   }
-  // });
+    if (!nameInput.value || !mailInput.value) {
+      event.preventDefault();
+      modalContent.classList.add('modal__content--error');
+    }
+  });
 
   // Slider
   function toArray(nodes) {

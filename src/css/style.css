@@ -345,6 +345,10 @@ body {
   color: #283136;
 }
 
+.no-js .range-panel {
+  display: none;
+}
+
 .range-panel {
   position: relative;
   width: 260px;
