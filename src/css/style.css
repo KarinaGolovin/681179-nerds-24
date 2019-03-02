@@ -370,6 +370,8 @@ body {
 .range-panel__scale--active {
   position: absolute;
   background-color: #00ca74;
+  width: 150px;
+  left: 20px;
 }
 
 .range-panel__controller {
@@ -388,7 +390,7 @@ body {
 }
 
 .range-panel__controller--max {
-  right: 18px;
+  right: 80px;
 }
 
 

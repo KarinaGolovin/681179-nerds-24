@@ -1,14 +1,13 @@
 'use strict';
 
 (function() {
+  // Remove class which style modal window and catalog page without js
+  document.body.classList.remove('no-js');
+
   const KEY_CODES = {
     enter: 13,
     esc: 27
   };
-
-  // Remove class which style modal window and catalog page without js
-  document.body.classList.remove('no-js');
-
   const modalOpenButton = document.querySelector('.address__link');
   const modalWindow = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal__content');
@@ -18,6 +17,14 @@
   const firstModalInput = modalWindow.querySelector('.contact-form__input');
   const modalInputs = toArray(modalWindow.querySelectorAll('.contact-form__input'));
   const contactFormSubmit = contactForm.querySelector('.contact-form__btn');
+
+  // for IE understand forEach
+
+  function toArray(nodes) {
+    return [].slice.call(nodes);
+  }
+
+  // Open and close modal
 
   function openModal(event) {
     event.preventDefault();
@@ -67,7 +74,6 @@
     }
   };
 
-  //Open Modal
   modalOpenButton.addEventListener('click', openModal);
 
   modalOpenButton.addEventListener('focus', function() {
@@ -78,7 +84,6 @@
     modalOpenButton.removeEventListener('keydown', openModalOnEnter);
   })
 
-  //Close
   modalCloseButton.addEventListener('click', closeModal);
   modalCloseButton.addEventListener('focus', function() {
     modalCloseButton.addEventListener('keydown', closeModalOnEnter);
@@ -92,10 +97,12 @@
   modalWindow.addEventListener('click', closeModalOnOutClick);
 
   //  Input validity check
+
   modalInputs.forEach(function(input) {
     input.addEventListener('focus', function() {
       input.classList.remove('contact-form__input--error');
     });
+
     input.addEventListener('blur', validateInput);
   });
 
@@ -108,6 +115,7 @@
   };
 
   // Add animationend event on submit error
+
   contactFormSubmit.addEventListener('click', function (event) {
     modalContent.classList.remove('modal__content--error');
     modalContent.classList.remove('modal__content--active-animation');
@@ -122,13 +130,9 @@
   });
 
   // Slider
-  function toArray(nodes) {
-    return [].slice.call(nodes);
-  }
 
   toArray(document.querySelectorAll('.slider')).forEach(function (slider) {
     const sliderButtons = toArray(slider.querySelectorAll('.switch-panel__button'));
-
     let activeSlide = slider.querySelector('.slide--active');
     let currentSliderId = activeSlide.getAttribute('data-id');
     let activeButton = slider.querySelector('.switch-panel__button[data-id=' + currentSliderId + ']');
@@ -160,12 +164,12 @@
     });
   });
 
-  // Range
-  const rangeScale = document.querySelector('.range-panel__scale--active');
-  const rangeControllerMin = document.querySelector('.range-panel__controller--min');
-  const rangeControllerMax = document.querySelector('.range-panel__controller--max');
-  const rangeInputMin = document.querySelector('.range-inputs__value--min');
-  const rangeInputMax = document.querySelector('.range-inputs__value--max');
+  // // Range
+  // const rangeScale = document.querySelector('.range-panel__scale--active');
+  // const rangeControllerMin = document.querySelector('.range-panel__controller--min');
+  // const rangeControllerMax = document.querySelector('.range-panel__controller--max');
+  // const rangeInputMin = document.querySelector('.range-inputs__value--min');
+  // const rangeInputMax = document.querySelector('.range-inputs__value--max');
 
   // Yandex map
   createMap();
@@ -242,4 +246,3 @@
     }
   }
 })();
-

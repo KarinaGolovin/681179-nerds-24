@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:update": "npm run test -- -u",
     "lint": "stylelint ./css/style.css",
     "lint:fix": "npm run lint -- --fix",
+    "build": "npm run build:css & npm run build:js",
     "build:css": "postcss src/css/style.css -o css/style.min.css -m",
-    "watch": "watch 'npm run build:css' ./src/"
+    "build:js": "uglifyjs --compress --mangle --source-map 'root=\"/\", url=\"scripts.min.js.map\"' --output js/scripts.min.js -- src/js/scripts.js",
+    "watch": "watch 'npm run build' ./src/"
   },
   "repository": {
     "type": "git",
@@ -41,6 +44,7 @@
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-order": "^2.0.0",
+    "uglify-es": "^3.3.9",
     "watch": "^1.0.2"
   }
 }
