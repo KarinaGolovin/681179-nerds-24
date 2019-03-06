@@ -164,12 +164,80 @@
     });
   });
 
-  // // Range
-  // const rangeScale = document.querySelector('.range-panel__scale--active');
-  // const rangeControllerMin = document.querySelector('.range-panel__controller--min');
-  // const rangeControllerMax = document.querySelector('.range-panel__controller--max');
-  // const rangeInputMin = document.querySelector('.range-inputs__value--min');
-  // const rangeInputMax = document.querySelector('.range-inputs__value--max');
+  // Range
+  const rangeScale = document.querySelector('.range-panel__scale--active');
+  const rangeController = document.querySelector('.range-panel__controller');
+  const rangeControllerMin = document.querySelector('.range-panel__controller--min');
+  const rangeControllerMax = document.querySelector('.range-panel__controller--max');
+  const rangeInputMin = document.querySelector('.range-inputs__value--min');
+  const rangeInputMax = document.querySelector('.range-inputs__value--max');
+  const rangeWidth = document.querySelector('.range-panel__scale').clientWidth;
+  const rangeBoxGap = 20;
+
+  function limitValue(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  };
+
+  function onDragStart(startX, elementInput) {
+    elementInput.value = (startX + rangeController.clientWidth / 2);
+    console.log('start at ' + startX);
+  };
+
+  function onDragStop(positionX, elementInput) {
+    elementInput.value = (positionX + rangeController.clientWidth / 2);
+    console.log('stop at ' + (positionX + rangeController.clientWidth / 2));
+  };
+
+  function onDragMove(positionX, elementInput) {
+    elementInput.value = (positionX + rangeController.clientWidth / 2);
+    console.log('move to ' + (positionX + rangeController.clientWidth / 2));
+  };
+
+  function setActiveRangeScale() {
+    rangeScale.style.width = (rangeControllerMax.offsetLeft + rangeControllerMax.clientWidth / 2) - (rangeControllerMin.offsetLeft + rangeControllerMin.clientWidth / 2) + 'px';
+  };
+
+  // проверять крайнюю точку движения контроллера
+  function checkControllerValue() {
+
+  }
+
+  function makeControllerDraggable(element, elementInput) {
+    element.addEventListener('mousedown', function(event) {
+      let startPosition = {
+        clientX: event.clientX,
+        x: event.target.offsetLeft,
+      };
+
+      onDragStart(startPosition.clientX, elementInput);
+
+      function moveController(evt) {
+        let deltaX = startPosition.clientX - evt.clientX;
+        let positionX = startPosition.x - deltaX;
+
+        onDragMove(positionX, elementInput);
+      };
+
+      function stopController(evt) {
+        let positionX = element.offsetLeft;
+
+        onDragStop(positionX, elementInput);
+
+        element.removeEventListener('mousemove', movePin);
+        element.removeEventListener('mouseup', stopPin);
+      };
+
+      element.addEventListener('mousemove', moveController);
+      element.addEventListener('mouseup', stopController);
+
+      element.style.left = limitValue(startPosition.clientX, rangeBoxGap, rangeWidth + rangeBoxGap) + 'px';
+
+      setActiveRangeScale();
+    });
+  };
+
+  makeControllerDraggable(rangeControllerMin, rangeInputMin);
+  makeControllerDraggable(rangeControllerMax, rangeInputMax);
 
   // Yandex map
   createMap();

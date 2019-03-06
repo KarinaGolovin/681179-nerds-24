@@ -614,6 +614,9 @@ body {
 
 .preview__text {
   max-width: 240px;
+  max-height: 240px;
+  min-height: 50px;
+  overflow: auto;
   margin: 0;
   color: #666666;
   line-height: 1.13;

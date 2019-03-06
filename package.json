@@ -11,7 +11,9 @@
     "build": "npm run build:css & npm run build:js",
     "build:css": "postcss src/css/style.css -o css/style.min.css -m",
     "build:js": "uglifyjs --compress --mangle --source-map 'root=\"/\", url=\"scripts.min.js.map\"' --output js/scripts.min.js -- src/js/scripts.js",
-    "watch": "watch 'npm run build' ./src/"
+    "watch": "npm run watch:css & npm run watch:js",
+    "watch:css": "watch 'npm run build:css' ./src/css/",
+    "watch:js": "watch 'npm run build:js' ./src/js/"
   },
   "repository": {
     "type": "git",
