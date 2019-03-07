@@ -24,6 +24,45 @@
     return [].slice.call(nodes);
   }
 
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+      // eslint-disable-next-line no-invalid-this
+      var context = this;
+      var args = toArray(arguments);
+
+      var later = function () {
+        timeout = null;
+        if (!immediate) {
+          func.apply(context, args);
+        }
+      };
+
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+
+      if (callNow) {
+        func.apply(context, args);
+      }
+    };
+  };
+
+  function throttle(func, wait) {
+    var timeout;
+    return function () {
+      let args = toArray(arguments);
+      let context = this;
+
+      if (!timeout) {
+        timeout = setTimeout(function () {
+          func.apply(context, args);
+          timeout = null;
+        }, wait);
+      }
+    };
+  };
+
   // Open and close modal
 
   function openModal(event) {
@@ -165,79 +204,136 @@
   });
 
   // Range
+  const rangeElement = document.querySelector('.range-panel');
   const rangeScale = document.querySelector('.range-panel__scale--active');
-  const rangeController = document.querySelector('.range-panel__controller');
   const rangeControllerMin = document.querySelector('.range-panel__controller--min');
   const rangeControllerMax = document.querySelector('.range-panel__controller--max');
+  const rangeInputs = toArray(document.querySelectorAll('.range-inputs__value'));
   const rangeInputMin = document.querySelector('.range-inputs__value--min');
   const rangeInputMax = document.querySelector('.range-inputs__value--max');
   const rangeWidth = document.querySelector('.range-panel__scale').clientWidth;
-  const rangeBoxGap = 20;
+  const RANGE_BOX_GAP = 20;
+  const VALUE_MAX = 20000;
+  const RANGE_RATIO = VALUE_MAX / (rangeWidth - RANGE_BOX_GAP);
 
   function limitValue(value, min, max) {
     return Math.min(Math.max(value, min), max);
   };
 
-  function onDragStart(startX, elementInput) {
-    elementInput.value = (startX + rangeController.clientWidth / 2);
-    console.log('start at ' + startX);
+  function toNumberWithSeparator(value) {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
   };
 
-  function onDragStop(positionX, elementInput) {
-    elementInput.value = (positionX + rangeController.clientWidth / 2);
-    console.log('stop at ' + (positionX + rangeController.clientWidth / 2));
+  // меняем тип инпутов, вешаем листенер на ввод данных, оформляем вывод числа как на макете
+  rangeInputs.forEach(function(element) {
+    element.attributes['type'].value = 'text';
+    // стоит добавить debounce?
+    element.addEventListener('change', handleInputChange);
+    // element.addEventListener('keypress', onKeyPress);
+    // element.removeEventListener('keyup', onKeyPress);
+  });
+
+  rangeInputs[1].value = toNumberWithSeparator(VALUE_MAX);
+  // подумать, как объединить мин макс инпут с мин макс рэнж
+  function handleInputChange(event) {
+    let inputValue = event.target.value;
+
+
+    event.target.value = toNumberWithSeparator(inputValue);
+
   };
 
-  function onDragMove(positionX, elementInput) {
-    elementInput.value = (positionX + rangeController.clientWidth / 2);
-    console.log('move to ' + (positionX + rangeController.clientWidth / 2));
-  };
+  // function onKeyPress(event) {
+  //   preventDefault();
+  //   if (/^\d*$/.test(event.target.value) && (event.target.value === '' || parseInt(event.target.value) <= VALUE_MAX)) {
+  //     value = event.target.value;
+  //   };
+  //   return;
+  // }
 
-  function setActiveRangeScale() {
-    rangeScale.style.width = (rangeControllerMax.offsetLeft + rangeControllerMax.clientWidth / 2) - (rangeControllerMin.offsetLeft + rangeControllerMin.clientWidth / 2) + 'px';
-  };
+  initRange({
+    valueFrom: RANGE_BOX_GAP,
+    valueTo: rangeWidth,
+    from: 0,
+    to: 100,
+    onRangeChange: function(currentValueFrom, currentValueTo) {
+      rangeInputMin.value = toNumberWithSeparator(Math.floor(RANGE_RATIO * (currentValueFrom - RANGE_BOX_GAP)));
+      rangeInputMax.value = toNumberWithSeparator(Math.floor(RANGE_RATIO * (currentValueTo - RANGE_BOX_GAP)));
+      rangeScale.style.left = currentValueFrom + 'px';
+      rangeScale.style.width = currentValueTo - currentValueFrom + 'px';
+    }
+  });
 
-  // проверять крайнюю точку движения контроллера
-  function checkControllerValue() {
+  function initRange(configuration) {
+    let valueFrom = configuration.valueFrom || 0;
+    let valueTo = configuration.valueTo || 100;
 
-  }
+    makeControllerDraggable({
+      element: rangeControllerMin,
+      onValueUpdate: function(value) {
+        valueFrom = limitValue(value, 0, valueTo);
+        configuration.onRangeChange(valueFrom, valueTo);
 
-  function makeControllerDraggable(element, elementInput) {
-    element.addEventListener('mousedown', function(event) {
-      let startPosition = {
-        clientX: event.clientX,
-        x: event.target.offsetLeft,
-      };
+        return valueFrom;
+      }
+    });
 
-      onDragStart(startPosition.clientX, elementInput);
+    makeControllerDraggable({
+      element: rangeControllerMax,
+      onValueUpdate: function(value) {
+        valueTo = limitValue(value, valueFrom, rangeWidth);
+        configuration.onRangeChange(valueFrom, valueTo);
 
-      function moveController(evt) {
-        let deltaX = startPosition.clientX - evt.clientX;
-        let positionX = startPosition.x - deltaX;
-
-        onDragMove(positionX, elementInput);
-      };
-
-      function stopController(evt) {
-        let positionX = element.offsetLeft;
-
-        onDragStop(positionX, elementInput);
-
-        element.removeEventListener('mousemove', movePin);
-        element.removeEventListener('mouseup', stopPin);
-      };
-
-      element.addEventListener('mousemove', moveController);
-      element.addEventListener('mouseup', stopController);
-
-      element.style.left = limitValue(startPosition.clientX, rangeBoxGap, rangeWidth + rangeBoxGap) + 'px';
-
-      setActiveRangeScale();
+        return valueTo;
+      }
     });
   };
 
-  makeControllerDraggable(rangeControllerMin, rangeInputMin);
-  makeControllerDraggable(rangeControllerMax, rangeInputMax);
+  function makeControllerDraggable(params) {
+    let element = params.element;
+    let onValueUpdate = params.onValueUpdate;
+
+    if (!onValueUpdate) {
+      onValueUpdate = function(value) {
+        return value;
+      };
+    }
+
+    let dragActive = false;
+    let startPosition = {};
+
+    element.addEventListener('mousedown', function (event) {
+      dragActive = true;
+
+      startPosition = {
+        clientX: event.clientX,
+        x: event.target.offsetLeft,
+      };
+    });
+
+    function moveController(evt) {
+      let deltaX = startPosition.clientX - evt.clientX;
+      let positionX = startPosition.x - deltaX;
+      let value = limitValue(positionX, RANGE_BOX_GAP, rangeWidth);
+      let updatedValue = onValueUpdate(value);
+
+      element.style.left = updatedValue + 'px';
+    };
+
+    function stopDrag() {
+      dragActive = false;
+    }
+
+    document.addEventListener('mouseup', stopDrag);
+    element.addEventListener('mouseup', stopDrag);
+
+    rangeElement.addEventListener('mousemove', function(event) {
+      if (!dragActive) {
+        return;
+      }
+      moveController(event);
+    });
+  };
 
   // Yandex map
   createMap();
@@ -286,31 +382,7 @@
       window.addEventListener('scroll', debounce(function() {
         isScrollLocked = false;
         myMap.behaviors.enable('scrollZoom');
-      }, 300))
+      }, 300));
     };
-  }
-
-  function debounce(func, wait, immediate) {
-    var timeout;
-    return function () {
-      // eslint-disable-next-line no-invalid-this
-      var context = this;
-      var args = arguments;
-
-      var later = function () {
-        timeout = null;
-        if (!immediate) {
-          func.apply(context, args);
-        }
-      };
-
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-
-      if (callNow) {
-        func.apply(context, args);
-      }
-    }
-  }
+  };
 })();

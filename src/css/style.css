@@ -370,27 +370,27 @@ body {
 .range-panel__scale--active {
   position: absolute;
   background-color: #00ca74;
-  width: 150px;
+  /* width: 150px; */
   left: 20px;
 }
 
 .range-panel__controller {
   position: absolute;
-  top: 29px;
-  width: 3px;
-  height: 3px;
-  border: 9px solid #ffffff;
+  top: 30px;
+  width: 4px;
+  height: 4px;
+  border: 8px solid #ffffff;
   border-radius: 50%;
   background-color: #ababab;
-  box-shadow: 0 2px 3px #ababab;
+  box-shadow: 0 1px 1px #ababab;
 }
 
 .range-panel__controller--min {
-  left: 18px;
+  left: 20px;
 }
 
 .range-panel__controller--max {
-  right: 80px;
+  right: 20px;
 }
 
 
@@ -419,12 +419,12 @@ body {
   text-align: center;
 }
 
-.range-inputs__value[type='number'] {
+.no-js .range-inputs__value[type='number'] {
     -moz-appearance:textfield;
 }
 
-.range-inputs__value::-webkit-outer-spin-button,
-.range-inputs__value::-webkit-inner-spin-button {
+.no-js .range-inputs__value::-webkit-outer-spin-button,
+.no-js .range-inputs__value::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
