@@ -213,9 +213,6 @@
     const rangeInputMin = document.querySelector('.range-inputs__value--min');
     const rangeInputMax = document.querySelector('.range-inputs__value--max');
     const rangeWidth = document.querySelector('.range-panel__scale').clientWidth;
-    const RANGE_BOX_GAP = 20;
-    const VALUE_MAX = 20000;
-    const RANGE_RATIO = VALUE_MAX / (rangeWidth - RANGE_BOX_GAP);
 
     function limitValue(value, min, max) {
       return Math.min(Math.max(value, min), max);
@@ -227,157 +224,150 @@
 
     function convertWithoutSeparator(value) {
       return value.replace(/\s+/g, '');
-    }
+    };
 
-    // меняем тип инпутов, вешаем листенер на ввод данных, оформляем вывод числа как на макете
     rangeInputs.forEach(function (element) {
-      element.attributes['type'].value = 'text';
-      // // стоит добавить debounce?
-      // element.addEventListener('focus', function(event) {
-      //   event.target.value = '';
-      // });
+      element.setAttribute('type', 'text');
+      element.setAttribute('pattern', '[^0-9\s]');
       element.addEventListener('change', handleInputChange);
     });
 
-    rangeInputs[1].value = VALUE_MAX;
+    const RANGE_VALUE_FROM = 0;
+    const RANGE_VALUE_TO = 21000;
 
-    // подумать, как объединить мин макс инпут с мин макс рэнж
-    function handleInputChange(event) {
-      let inputValue = event.target.value;
-
-      if(isNaN(inputValue) && event.target === rangeInputs[0]) {
-        rangeInputs[0].value = 0;
-
-        return;
-      } else if (isNaN(inputValue) && event.target === rangeInputs[1]) {
-        rangeInputs[1].value = VALUE_MAX;
-
-        return;
-      }
-
-      if(inputValue > VALUE_MAX) {
-        event.target.value = VALUE_MAX;
-      } else if(inputValue < 0) {
-        event.target.value = 0;
-      }
-
-      // Проверка чтоб число не было больше или меньше
-      // if(rangeInputs[0].value > rangeInputs[1].value) {
-      //   let value = rangeInputs[1].value;
-      //   console.log('Должны быть равны');
-      //   rangeInputs[0].value = value;
-      // } else if (rangeInputs[1].value < rangeInputs[0].value) {
-      //   let value = rangeInputs[0].value;
-      //   rangeInputs[1].value = value;
-      // }
-
-      if(event.target === rangeInputMin) {
-        let currentMinPosition = inputValue / RANGE_RATIO + RANGE_BOX_GAP;
-        rangeControllerMin.style.left = currentMinPosition  + 'px';
-        rangeScale.style.left = currentMinPosition + 'px';
-        rangeScale.style.width = rangeControllerMax.offsetLeft - currentMinPosition + 'px';
-      } else if (event.target === rangeInputMax) {
-        let currentMaxPosition = inputValue / RANGE_RATIO + RANGE_BOX_GAP;
-        rangeControllerMax.style.left = currentMaxPosition + 'px';
-        rangeScale.style.left = rangeControllerMin.offsetLeft + 'px';
-        rangeScale.style.width = currentMaxPosition - rangeControllerMin.offsetLeft + 'px';
-      }
-    };
-
-    // Если пустые поля, чтоб заполнялись значением по умолчанию
-    if (rangeInputs[0].value === '') {
-      console.log(rangeInputs[0].value);
-      rangeInputs[0].value = 0;
-    }
-    if (rangeInputs[1].value === '') {
-      console.log(rangeInputs[1].value);
-      rangeInputs[1].value = VALUE_MAX;
-    }
-
-    initRange({
-      valueFrom: RANGE_BOX_GAP,
-      valueTo: rangeWidth,
-      from: 0,
-      to: 100,
-      onRangeChange: function (currentValueFrom, currentValueTo) {
-        // rangeInputMin.value = convertWithSeparator(Math.floor(RANGE_RATIO * (currentValueFrom - RANGE_BOX_GAP)));
-        // rangeInputMax.value = convertWithSeparator(Math.floor(RANGE_RATIO * (currentValueTo - RANGE_BOX_GAP)));
-        rangeInputMin.value = Math.floor(RANGE_RATIO * (currentValueFrom - RANGE_BOX_GAP));
-        rangeInputMax.value = Math.floor(RANGE_RATIO * (currentValueTo - RANGE_BOX_GAP));
-        rangeScale.style.left = currentValueFrom + 'px';
-        rangeScale.style.width = currentValueTo - currentValueFrom + 'px';
+    var rangeInstance = initRange({
+      from: RANGE_VALUE_FROM,
+      to: RANGE_VALUE_TO,
+      onRangeChange: function (valueFrom, valueTo) {
+        rangeInputMin.value = convertWithSeparator(limitValue(valueFrom, RANGE_VALUE_FROM, RANGE_VALUE_TO));
+        rangeInputMax.value = convertWithSeparator(limitValue(valueTo, RANGE_VALUE_FROM, RANGE_VALUE_TO));
       }
     });
 
+    rangeInstance.setValue({
+      from: toRawNumber(rangeInputMin.value) || RANGE_VALUE_FROM,
+      to: toRawNumber(rangeInputMax.value) || RANGE_VALUE_TO
+    });
+
+    function toRawNumber(value) {
+      return Number(convertWithoutSeparator(value.replace(/[^0-9\s]/gi, '')));
+    };
+
+    function handleInputChange() {
+      rangeInstance.setValue({
+        from: toRawNumber(rangeInputMin.value),
+        to: toRawNumber(rangeInputMax.value)
+      });
+    };
+
     function initRange(configuration) {
-      let valueFrom = configuration.valueFrom || 0;
-      let valueTo = configuration.valueTo || 100;
+      const RANGE_BOX_GAP = 20;
+      const ratio = configuration.to / (rangeWidth - RANGE_BOX_GAP);
+      let positionFrom = valueToPosition(configuration.from);
+      let positionTo = valueToPosition(configuration.to);
+
+      console.log(
+        5000,
+        positionToValue(valueToPosition(5000))
+      )
+
+      function setValue(state) {
+        let from = state.from || positionFrom;
+        let to = state.to || positionTo;
+
+        positionTo = limitValue(to, positionFrom, rangeWidth);
+        positionFrom = limitValue(from, 0, positionTo);
+
+        configuration.onRangeChange(
+          positionToValue(positionFrom),
+          positionToValue(positionTo)
+        );
+
+        rangeScale.style.left = positionFrom + 'px';
+        rangeScale.style.width = positionTo - positionFrom + 'px';
+
+        rangeControllerMin.style.left = positionFrom + 'px';
+        rangeControllerMax.style.left = positionTo + 'px';
+      };
+
+      function positionToValue(position) {
+        return Math.round((position - RANGE_BOX_GAP) * ratio)
+      };
+
+      function valueToPosition(value) {
+        return (value / ratio) + RANGE_BOX_GAP
+      };
 
       makeControllerDraggable({
         element: rangeControllerMin,
         onValueUpdate: function (value) {
-          valueFrom = limitValue(value, 0, valueTo);
-          configuration.onRangeChange(valueFrom, valueTo);
-
-          return valueFrom;
+          setValue({
+            from: value
+          });
         }
       });
 
       makeControllerDraggable({
         element: rangeControllerMax,
         onValueUpdate: function (value) {
-          valueTo = limitValue(value, valueFrom, rangeWidth);
-          configuration.onRangeChange(valueFrom, valueTo);
-
-          return valueTo;
+          setValue({
+            to: value
+          });
         }
       });
-    };
 
-    function makeControllerDraggable(params) {
-      let element = params.element;
-      let onValueUpdate = params.onValueUpdate;
+      function makeControllerDraggable(params) {
+        let element = params.element;
+        let onValueUpdate = params.onValueUpdate;
 
-      if (!onValueUpdate) {
-        onValueUpdate = function (value) {
-          return value;
+        if (!onValueUpdate) {
+          onValueUpdate = function (value) {
+            return value;
+          };
+        }
+
+        let dragActive = false;
+        let startPosition = {};
+
+        element.addEventListener('mousedown', function (event) {
+          dragActive = true;
+
+          startPosition = {
+            clientX: event.clientX,
+            x: event.target.offsetLeft,
+          };
+        });
+
+        function moveController(evt) {
+          let deltaX = startPosition.clientX - evt.clientX;
+          let positionX = startPosition.x - deltaX;
+          let value = limitValue(positionX, RANGE_BOX_GAP, rangeWidth);
+          onValueUpdate(value);
         };
-      }
 
-      let dragActive = false;
-      let startPosition = {};
+        function stopDrag() {
+          dragActive = false;
+        }
 
-      element.addEventListener('mousedown', function (event) {
-        dragActive = true;
+        document.addEventListener('mouseup', stopDrag);
+        element.addEventListener('mouseup', stopDrag);
 
-        startPosition = {
-          clientX: event.clientX,
-          x: event.target.offsetLeft,
-        };
-      });
-
-      function moveController(evt) {
-        let deltaX = startPosition.clientX - evt.clientX;
-        let positionX = startPosition.x - deltaX;
-        let value = limitValue(positionX, RANGE_BOX_GAP, rangeWidth);
-        let updatedValue = onValueUpdate(value);
-
-        element.style.left = updatedValue + 'px';
+        rangeElement.addEventListener('mousemove', function (event) {
+          if (!dragActive) {
+            return;
+          }
+          moveController(event);
+        });
       };
 
-      function stopDrag() {
-        dragActive = false;
-      }
-
-      document.addEventListener('mouseup', stopDrag);
-      element.addEventListener('mouseup', stopDrag);
-
-      rangeElement.addEventListener('mousemove', function (event) {
-        if (!dragActive) {
-          return;
+      return {
+        setValue: function(config) {
+          setValue({
+            from: valueToPosition(config.from),
+            to: valueToPosition(config.to)
+          })
         }
-        moveController(event);
-      });
+      }
     };
   }
 
